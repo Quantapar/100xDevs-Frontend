@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { cohorts } from '../../data';
 import { useCurrency } from '../../context/CurrencyContext';
+import { useNavigate } from 'react-router-dom';
 
 export function CohortsSection() {
   const [currencyMap, setCurrencyMap] = useState<Record<number, 'INR' | 'USD'>>({});
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const { formatPrice } = useCurrency();
+  const navigate = useNavigate();
 
   const getCurrency = (idx: number) => currencyMap[idx] || 'INR';
   const toggleDropdown = (idx: number) => setOpenDropdown(openDropdown === idx ? null : idx);
@@ -84,7 +86,10 @@ export function CohortsSection() {
                         )}
                       </div>
                       
-                      <button className="w-full flex-grow bg-[#04102d] text-white py-4 rounded-[14px] font-black tracking-wide border-2 border-[#04102d] shadow-[4px_4px_0_#0bae95] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#0bae95] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px] text-xl cursor-pointer">
+                      <button 
+                         onClick={() => navigate(`/new-courses/${featuredCourse.id}`)}
+                         className="w-full flex-grow bg-[#04102d] text-white py-4 rounded-[14px] font-black tracking-wide border-2 border-[#04102d] shadow-[4px_4px_0_#0bae95] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#0bae95] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px] text-xl cursor-pointer"
+                      >
                          View Details
                       </button>
                    </div>
@@ -150,7 +155,10 @@ export function CohortsSection() {
                         )}
                      </div>
                      
-                     <button className="w-full bg-[#04102d] text-white py-4 rounded-[14px] font-black tracking-wide border-2 border-[#04102d] shadow-[4px_4px_0_#0bae95] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#0bae95] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px] mt-auto text-lg cursor-pointer">
+                     <button 
+                        onClick={() => navigate(`/new-courses/${course.id}`)}
+                        className="w-full bg-[#04102d] text-white py-4 rounded-[14px] font-black tracking-wide border-2 border-[#04102d] shadow-[4px_4px_0_#0bae95] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#0bae95] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px] mt-auto text-lg cursor-pointer"
+                     >
                         View Details
                      </button>
                   </div>

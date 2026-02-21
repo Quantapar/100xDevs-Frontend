@@ -42,7 +42,7 @@ export function Navbar({ onOpenAuth }: { onOpenAuth: () => void }) {
         </div>
       </nav>
 
-      {/* Mobile Menu Content */}
+      
       {isOpen && (
         <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b-4 border-[#04102d] shadow-2xl flex flex-col pt-2 pb-6 px-4 animate-in slide-in-from-top-4 duration-200">
           <Link to="/" onClick={() => setIsOpen(false)} className="py-4 font-bold text-[#04102d] border-b-2 border-gray-100 flex items-center justify-between">

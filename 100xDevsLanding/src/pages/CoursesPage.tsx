@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { Search, ChevronDown, Briefcase, Users, Zap } from 'lucide-react';
 import { cohorts, oldPrograms } from '../data';
 import { useCurrency } from '../context/CurrencyContext';
+import { useNavigate } from 'react-router-dom';
 
 export function CoursesPage() {
   const [currencyMap, setCurrencyMap] = useState<Record<string, 'INR' | 'USD'>>({});
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const { formatPrice } = useCurrency();
+  const navigate = useNavigate();
 
   const getCurrency = (id: string) => currencyMap[id] || 'INR';
   const toggleDropdown = (id: string, e: React.MouseEvent) => {
@@ -234,7 +236,10 @@ export function CoursesPage() {
                       )}
                     </div>
                     
-                    <button className="w-full sm:w-auto flex-grow bg-[#04102d] text-white py-[10px] rounded-[10px] font-black tracking-wide border-[3px] border-[#04102d] shadow-[3px_3px_0_#0bae95] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0_#0bae95] transition-all text-[15px] cursor-pointer flex items-center justify-center gap-2">
+                    <button 
+                      onClick={(e) => { e.stopPropagation(); navigate(`/new-courses/${(course as any).id || 24}`); }}
+                      className="w-full sm:w-auto flex-grow bg-[#04102d] text-white py-[10px] rounded-[10px] font-black tracking-wide border-[3px] border-[#04102d] shadow-[3px_3px_0_#0bae95] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0_#0bae95] transition-all text-[15px] cursor-pointer flex items-center justify-center gap-2"
+                    >
                       View Details
                     </button>
                     

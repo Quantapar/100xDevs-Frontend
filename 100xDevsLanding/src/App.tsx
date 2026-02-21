@@ -20,6 +20,7 @@ import { RefundPage } from './pages/RefundPage';
 import { StorePage } from './pages/StorePage';
 import { CoursesPage } from './pages/CoursesPage';
 import { ProductPage } from './pages/ProductPage';
+import { CourseDetailsPage } from './pages/CourseDetailsPage';
 
 function LandingPage() {
   return (
@@ -56,6 +57,7 @@ function App() {
               <Route path="/store" element={<StorePage />} />
               <Route path="/store/:id" element={<ProductPage />} />
               <Route path="/courses" element={<CoursesPage />} />
+              <Route path="/new-courses/:id" element={<CourseDetailsPage />} />
             </Routes>
           </main>
 
