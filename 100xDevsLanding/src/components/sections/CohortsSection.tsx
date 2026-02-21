@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { cohorts } from '../../data';
+import { useCurrency } from '../../context/CurrencyContext';
 
 export function CohortsSection() {
   const [currencyMap, setCurrencyMap] = useState<Record<number, 'INR' | 'USD'>>({});
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+  const { formatPrice } = useCurrency();
 
   const getCurrency = (idx: number) => currencyMap[idx] || 'INR';
   const toggleDropdown = (idx: number) => setOpenDropdown(openDropdown === idx ? null : idx);
@@ -22,8 +24,8 @@ export function CohortsSection() {
            const featuredIdx = 0;
            const featuredCourse = cohorts[featuredIdx];
            const curr = getCurrency(featuredIdx);
-           const price = curr === 'INR' ? featuredCourse.price : featuredCourse.priceUsd;
-           const oldPrice = curr === 'INR' ? featuredCourse.oldPrice : featuredCourse.oldPriceUsd;
+           const price = formatPrice(featuredCourse.priceInr, curr);
+           const oldPrice = formatPrice(featuredCourse.oldPriceInr, curr);
 
            return (
              <div className={`bg-white border-2 border-[#04102d] rounded-[24px] p-4 lg:p-6 flex flex-col lg:flex-row lg:items-center shadow-[8px_8px_0_#0bae95] hover:-translate-y-2 hover:shadow-[12px_12px_0_#0bae95] transition-all duration-300 mb-12 relative ${openDropdown === featuredIdx ? 'z-50' : 'z-10'}`}>
@@ -95,8 +97,8 @@ export function CohortsSection() {
           {cohorts.slice(1, 4).map((course, idx) => {
              const actualIdx = idx + 1;
              const curr = getCurrency(actualIdx);
-             const price = curr === 'INR' ? course.price : course.priceUsd;
-             const oldPrice = curr === 'INR' ? course.oldPrice : course.oldPriceUsd;
+             const price = formatPrice(course.priceInr, curr);
+             const oldPrice = formatPrice(course.oldPriceInr, curr);
 
              return (
                <div key={idx} className={`bg-white border-2 border-[#04102d] rounded-[24px] p-4 flex flex-col shadow-[8px_8px_0_#0bae95] hover:-translate-y-2 hover:shadow-[12px_12px_0_#0bae95] transition-all duration-300 relative ${openDropdown === actualIdx ? 'z-50' : 'z-10'}`}>

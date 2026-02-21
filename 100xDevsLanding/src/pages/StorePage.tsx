@@ -1,39 +1,17 @@
-import { ArrowRight } from 'lucide-react';
-
-const merchItems = [
-  {
-    id: 1,
-    title: '100x Cool T-Shirt for Everyday Flex - White',
-    price: '₹999',
-    bgColor: 'bg-[#e2eafb]', 
-    imagePath: 'https://appx-content-v2.classx.co.in/subject/2026-01-20-0_8779263070024793.jpg',
-  },
-  {
-    id: 2,
-    title: '100x Cool T-Shirt for Everyday Flex - Black',
-    price: '₹999',
-    bgColor: 'bg-[#04102d]/10',
-    imagePath: 'https://appx-content-v2.classx.co.in/subject/2026-01-20-0_3411687194845816.jpg',
-  },
-  {
-    id: 3,
-    title: '100x Cool T-Shirt for Everyday Flex - Cream',
-    price: '₹999',
-    bgColor: 'bg-[#f1ecd9]',
-    imagePath: 'https://appx-content-v2.classx.co.in/subject/2026-01-21-0_3317186839576379.jpeg',
-  },
-  {
-    id: 4,
-    title: '100x Cool T-Shirt for Everyday Flex - Light Grey',
-    price: '₹999',
-    bgColor: 'bg-[#cbd5e1]',
-    imagePath: 'https://appx-content-v2.classx.co.in/subject/2026-01-23-0_44568583421620445.jpeg',
-  }
-];
+import { ArrowRight, ChevronDown } from 'lucide-react';
+import { useState } from 'react';
+import { useCurrency } from '../context/CurrencyContext';
+import { merchItems } from '../data';
+import { useNavigate } from 'react-router-dom';
 
 export function StorePage() {
+  const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
+  const [showDropdown, setShowDropdown] = useState(false);
+  const { formatPrice } = useCurrency();
+  const navigate = useNavigate();
+
   return (
-    <div className="w-full flex flex-col flex-grow bg-white">
+    <div className="w-full flex flex-col flex-grow bg-white" onClick={() => setShowDropdown(false)}>
       <div className="w-full flex justify-center pt-12 pb-12 lg:pt-16 lg:pb-16 bg-white overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-6">
           <div className="relative w-full rounded-[32px] border-4 border-[#04102d] shadow-[8px_8px_0_#0bae95] lg:shadow-[12px_12px_0_#0bae95] overflow-hidden flex items-center min-h-[400px] lg:min-h-[480px] group">
@@ -65,11 +43,44 @@ export function StorePage() {
 
    
       <div className="max-w-7xl mx-auto px-6 py-16 w-full">
-        <h2 className="text-3xl lg:text-5xl font-black text-[#04102d] mb-12">Our Bestselling Merch</h2>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-12">
+          <h2 className="text-3xl lg:text-5xl font-black text-[#04102d]">Our Bestselling Merch</h2>
+          
+          <div className="relative">
+            <div 
+              onClick={(e) => { e.stopPropagation(); setShowDropdown(!showDropdown); }}
+              className="px-6 py-3 rounded-xl border-4 border-[#04102d] bg-white shadow-[4px_4px_0_#04102d] hover:shadow-[2px_2px_0_#04102d] hover:translate-x-[2px] hover:translate-y-[2px] transition-all flex items-center gap-4 cursor-pointer font-black text-[#04102d]"
+            >
+              <span>{currency}</span>
+              <ChevronDown className={`w-5 h-5 transition-transform ${showDropdown ? 'rotate-180' : ''}`} strokeWidth={3} />
+            </div>
+
+            {showDropdown && (
+              <div className="absolute top-full right-0 mt-3 w-32 bg-white border-4 border-[#04102d] rounded-xl shadow-[8px_8px_0_#0bae95] overflow-hidden z-50">
+                <div 
+                  onClick={() => { setCurrency('INR'); setShowDropdown(false); }}
+                  className="px-6 py-3 font-black text-[#04102d] hover:bg-gray-50 cursor-pointer border-b-2 border-gray-100"
+                >
+                  INR
+                </div>
+                <div 
+                  onClick={() => { setCurrency('USD'); setShowDropdown(false); }}
+                  className="px-6 py-3 font-black text-[#04102d] hover:bg-gray-50 cursor-pointer"
+                >
+                  USD
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-20">
           {merchItems.map((item) => (
-            <div key={item.id} className="group bg-white rounded-[24px] border-2 border-[#04102d] overflow-hidden shadow-[6px_6px_0_#04102d] hover:-translate-y-2 hover:shadow-[10px_10px_0_#0bae95] transition-all duration-300 flex flex-col cursor-pointer">
+            <div 
+              key={item.id} 
+              onClick={() => navigate(`/store/${item.id}`)}
+              className="group bg-white rounded-[24px] border-2 border-[#04102d] overflow-hidden shadow-[6px_6px_0_#04102d] hover:-translate-y-2 hover:shadow-[10px_10px_0_#0bae95] transition-all duration-300 flex flex-col cursor-pointer"
+            >
               
               <div className={`w-full aspect-square ${item.bgColor} flex items-center justify-center relative border-b-2 border-[#04102d] overflow-hidden`}>
                 <div className="absolute inset-0 opacity-[0.4] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay pointer-events-none"></div>
@@ -84,7 +95,7 @@ export function StorePage() {
               <div className="p-8 flex flex-col flex-grow justify-between gap-6">
                 <h3 className="text-[20px] font-black text-[#04102d] leading-snug pr-4">{item.title}</h3>
                 <div className="flex items-center justify-between mt-auto pt-4 border-t-2 border-dashed border-gray-200">
-                  <span className="text-2xl font-black text-[#04102d]">{item.price}</span>
+                  <span className="text-2xl font-black text-[#04102d]">{formatPrice(item.priceInr, currency)}</span>
                   <div className="flex items-center gap-2 text-[#0bae95] font-bold group-hover:text-[#04102d] transition-colors">
                     <span className="text-[15px]">View Details</span>
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" strokeWidth={3} />

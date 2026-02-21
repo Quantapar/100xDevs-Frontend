@@ -71,40 +71,32 @@ export const cohorts = [
   {
     title: "100xSchool Combined Bootcamp",
     desc: "Web dev (Every Friday) Devops (Every Friday) Machine Learning and AI (Every Saturday)...",
-    price: "₹5,999",
-    oldPrice: "₹8,999",
-    priceUsd: "$72.10",
-    oldPriceUsd: "$108.16",
+    priceInr: 5999,
+    oldPriceInr: 8999,
     discount: "34% off",
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_6302172904491252.jpg"
   },
   {
     title: "Web Dev + Devops Bootcamp",
     desc: "Complete Typescript + MERN stack, Complete Devops, System design, Projects",
-    price: "₹3,999",
-    oldPrice: "₹5,999",
-    priceUsd: "$48.06",
-    oldPriceUsd: "$72.10",
+    priceInr: 3999,
+    oldPriceInr: 5999,
     discount: "34% off",
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_0916663009561891.jpg"
   },
   {
     title: "Web3 Bootcamp",
     desc: "Complete Solana and Web3 Bootcamp",
-    price: "₹3,999",
-    oldPrice: "₹5,999",
-    priceUsd: "$48.06",
-    oldPriceUsd: "$72.10",
+    priceInr: 3999,
+    oldPriceInr: 5999,
     discount: "34% off",
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_9482626468382281.jpg"
   },
   {
     title: "AI Bootcamp 1.0",
     desc: "Classical ML, Attention and its variations, GenAI, Memory and retrieval, Advanced topics",
-    price: "₹3,999",
-    oldPrice: "₹5,999",
-    priceUsd: "$48.06",
-    oldPriceUsd: "$72.10",
+    priceInr: 3999,
+    oldPriceInr: 5999,
     discount: "34% off",
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_12723468219857426.jpg"
   }
@@ -114,91 +106,73 @@ export const oldPrograms = [
   {
     title: "Complete Web Development + Devops + Blockchain Cohort",
     desc: "Complete syllabus - https://blog.100xdevs.com/ Starts 2nd August 2024",
-    price: "₹5,989",
-    oldPrice: "₹8,499",
-    priceUsd: "$72.10",
-    oldPriceUsd: "$108.16",
+    priceInr: 5989,
+    oldPriceInr: 8499,
     discount: "30% off",
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_9746534586545286.jpg"
   },
   {
     title: "Complete Web development + Devops Cohort",
     desc: "Starts 2nd August 2024 Complete syllabus - https://blog.100xdevs.com/",
-    price: "₹4,989",
-    oldPrice: "₹5,999",
-    priceUsd: "$60.00",
-    oldPriceUsd: "$72.10",
+    priceInr: 4989,
+    oldPriceInr: 5999,
     discount: "17% off",
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_3591256197462771.jpeg"
   },
   {
     title: "Complete Web3/Blockchain Cohort",
     desc: "Complete syllabus - https://blog.100xdevs.com/ Starts 2nd August 2024",
-    price: "₹4,989",
-    oldPrice: "₹5,999",
-    priceUsd: "$60.00",
-    oldPriceUsd: "$72.10",
+    priceInr: 4989,
+    oldPriceInr: 5999,
     discount: "17% off",
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_14005359899502445.jpeg"
   },
   {
     title: "Complete Web Development Cohort",
     desc: "Complete syllabus - https://blog.100xdevs.com/ Starts 2nd August 2024",
-    price: "₹2,989",
-    oldPrice: "₹3,999",
-    priceUsd: "$36.00",
-    oldPriceUsd: "$48.06",
+    priceInr: 2989,
+    oldPriceInr: 3999,
     discount: "26% off",
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_6191871226534383.jpeg"
   },
   {
     title: "Complete Devops Cohort",
     desc: "Complete syllabus - https://blog.100xdevs.com/ In the Devops Cohort...",
-    price: "₹2,989",
-    oldPrice: "₹3,999",
-    priceUsd: "$36.00",
-    oldPriceUsd: "$48.06",
+    priceInr: 2989,
+    oldPriceInr: 3999,
     discount: "26% off",
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_5294406977112471.jpeg"
   },
   {
     title: "Live 0-100 Complete",
     desc: "Go from 0 to 100 with Harkirat Singh Live. Learn basics to advanced MERN...",
-    price: "₹5,589",
-    oldPrice: "₹7,999",
-    priceUsd: "$67.00",
-    oldPriceUsd: "$96.00",
+    priceInr: 5589,
+    oldPriceInr: 7999,
     discount: "31% off",
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_7921470593092867.jpg"
   },
   {
     title: "Live 0-1",
     desc: "Learn MERN basics, open source and portfolio building from scratch.",
-    price: "₹2,989",
-    oldPrice: "₹3,999",
-    priceUsd: "$36.00",
-    oldPriceUsd: "$48.06",
-    discount: "26% off",
+    priceInr: 3489,
+    oldPriceInr: 5999,
+    discount: "41% off",
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_6241552223044127.jpg"
   },
   {
     title: "Live 1-100",
     desc: "System design, advanced backend, and advanced devops for scaling.",
-    price: "₹2,989",
-    oldPrice: "₹3,999",
-    priceUsd: "$36.00",
-    oldPriceUsd: "$48.06",
-    discount: "26% off",
+    priceInr: 3989,
+    oldPriceInr: 5999,
+    discount: "34% off",
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_035738282034753155.jpg"
   },
   {
     title: "Live Full Stack Open Source Cohort 1",
     desc: "Deep dive into JS/TS, Open source contributions and assignments.",
-    price: "₹2,989",
-    oldPrice: "₹4,999",
-    priceUsd: "$36.00",
-    oldPriceUsd: "$60.00",
-    discount: "40% off",
+    priceInr: 3989,
+    oldPriceInr: 4999,
+    discount: "21% off",
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_7283497422556585.jpg"
   }
 ];
@@ -238,5 +212,44 @@ export const faqs = [
   {
     question: "Will I get a certificate after completion?",
     answer: "Yes, you'll receive a certificate of completion for each course you finish, along with portfolio projects that demonstrate your skills to potential employers."
+  }
+];
+
+export const merchItems = [
+  {
+    id: 1,
+    title: '100x Cool T-Shirt for Everyday Flex - White',
+    priceInr: 999,
+    bgColor: 'bg-[#e2eafb]', 
+    imagePath: 'https://appx-content-v2.classx.co.in/subject/2026-01-20-0_8779263070024793.jpg',
+    description: 'Stylish White T-Shirt with Bold Black & Blue Text - 100x Cool Design',
+    deliveryTime: '20 days'
+  },
+  {
+    id: 2,
+    title: '100x Cool T-Shirt for Everyday Flex - Black',
+    priceInr: 999,
+    bgColor: 'bg-[#04102d]/10',
+    imagePath: 'https://appx-content-v2.classx.co.in/subject/2026-01-20-0_3411687194845816.jpg',
+    description: 'Stylish Black T-Shirt with Bold White & Blue Text - 100x Cool Design',
+    deliveryTime: '20 days'
+  },
+  {
+    id: 3,
+    title: '100x Cool T-Shirt for Everyday Flex - Cream',
+    priceInr: 999,
+    bgColor: 'bg-[#f1ecd9]',
+    imagePath: 'https://appx-content-v2.classx.co.in/subject/2026-01-21-0_3317186839576379.jpeg',
+    description: 'Stylish Cream T-Shirt with Bold Black & Blue Text - 100x Cool Design',
+    deliveryTime: '20 days'
+  },
+  {
+    id: 4,
+    title: '100x Cool T-Shirt for Everyday Flex - Light Grey',
+    priceInr: 999,
+    bgColor: 'bg-[#cbd5e1]',
+    imagePath: 'https://appx-content-v2.classx.co.in/subject/2026-01-23-0_44568583421620445.jpeg',
+    description: 'Stylish Light Grey T-Shirt with Bold Black & Blue Text - 100x Cool Design',
+    deliveryTime: '20 days'
   }
 ];

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Search, ChevronDown, ArrowRight, Briefcase, Users, Zap } from 'lucide-react';
 import { cohorts, oldPrograms } from '../data';
+import { useCurrency } from '../context/CurrencyContext';
 
 export function CoursesPage() {
   const [currencyMap, setCurrencyMap] = useState<Record<string, 'INR' | 'USD'>>({});
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const { formatPrice } = useCurrency();
 
   const getCurrency = (id: string) => currencyMap[id] || 'INR';
   const toggleDropdown = (id: string, e: React.MouseEvent) => {
@@ -83,8 +85,8 @@ export function CoursesPage() {
           {cohorts.map((course, idx) => {
              const key = `featured-${idx}`;
              const curr = getCurrency(key);
-             const price = curr === 'INR' ? course.price : course.priceUsd;
-             const oldPrice = curr === 'INR' ? course.oldPrice : course.oldPriceUsd;
+             const price = formatPrice(course.priceInr, curr);
+             const oldPrice = formatPrice(course.oldPriceInr, curr);
 
              return (
             <div key={key} className={`w-full bg-white rounded-[24px] border-4 border-[#04102d] shadow-[8px_8px_0_#04102d] hover:shadow-[12px_12px_0_#0bae95] hover:-translate-y-1 transition-all duration-300 flex flex-col md:flex-row items-stretch group cursor-pointer relative ${openDropdown === key ? 'z-50' : 'z-10'}`}>
@@ -169,8 +171,8 @@ export function CoursesPage() {
           {oldPrograms.map((course, idx) => {
              const key = `old-${idx}`;
              const curr = getCurrency(key);
-             const price = curr === 'INR' ? course.price : course.priceUsd;
-             const oldPrice = curr === 'INR' ? course.oldPrice : course.oldPriceUsd;
+             const price = formatPrice(course.priceInr, curr);
+             const oldPrice = formatPrice(course.oldPriceInr, curr);
 
              return (
             <div key={key} className={`w-full bg-white rounded-[24px] border-4 border-[#04102d] shadow-[8px_8px_0_#04102d] hover:shadow-[12px_12px_0_#0bae95] hover:-translate-y-1 transition-all duration-300 flex flex-col group cursor-pointer relative ${openDropdown === key ? 'z-50' : 'z-10'}`}>
