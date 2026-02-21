@@ -98,8 +98,6 @@ export function CoursesPage() {
                    </div>
                 </div>
               </div>
-
-
               <div className="w-full md:w-[52%] p-5 lg:p-8 flex flex-col justify-between bg-white rounded-b-[20px] md:rounded-r-[20px] md:rounded-bl-none z-20">
                 <div>
                   <h3 className="text-xl lg:text-2xl font-black text-[#04102d] mb-2 leading-tight pr-4">{course.title}</h3>
@@ -109,7 +107,6 @@ export function CoursesPage() {
                 </div>
 
                 <div className="flex flex-col gap-5 mt-auto">
-             
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex flex-wrap items-center gap-2">
                       <span className="text-3xl font-black text-[#04102d] tracking-tight">{price}</span>
@@ -255,8 +252,6 @@ export function CoursesPage() {
       <div className="w-full bg-[#f0f3f8] py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="relative w-full min-h-[380px] lg:min-h-[440px] bg-[#04102d] rounded-[32px] lg:rounded-[48px] border-4 border-[#04102d] shadow-[16px_16px_0_#0bae95] overflow-hidden flex flex-col items-center justify-center text-center px-6 py-12 lg:py-16 group">
-            
-        
             <div className="absolute inset-0 z-0">
               <img 
                 src="https://100xdevs.com/community6.png" 
@@ -303,8 +298,6 @@ export function CoursesPage() {
                 </div>
               </div>
             </div>
-
-
           </div>
         </div>
       </div>
