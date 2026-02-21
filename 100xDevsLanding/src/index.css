@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-lavender: #EBE9FE;
+  --color-primary-lime: #E5FBB8;
+  --color-primary-yellow: #FCFFB2;
+}
+
+html {
+  overscroll-behavior-y: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  overscroll-behavior-y: none;
+}
+
+@keyframes slide-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 12px)); }
+}
+
+.animate-marquee {
+  animation: slide-left 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
