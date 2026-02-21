@@ -7,12 +7,27 @@
 }
 
 html {
+  background-color: #000000;
   overscroll-behavior-y: none;
 }
 
 body {
   font-family: "Inter", sans-serif;
+  background-color: #ffffff;
+  position: relative;
   overscroll-behavior-y: none;
+}
+
+
+body::before {
+  content: "";
+  position: absolute;
+  top: -50vh;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background-color: #ffffff;
+  pointer-events: none;
 }
 
 @keyframes slide-left {

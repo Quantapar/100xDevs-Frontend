@@ -15,7 +15,7 @@ export function Footer() {
         <div className="flex flex-col gap-4 text-center md:text-left">
            <Link to="/terms" onClick={() => window.scrollTo(0,0)} className="text-white/70 hover:text-white font-semibold transition-colors cursor-pointer">Terms & Conditions</Link>
            <Link to="/privacy-policy" onClick={() => window.scrollTo(0,0)} className="text-white/70 hover:text-white font-semibold transition-colors cursor-pointer">Privacy Policy</Link>
-           <a href="#" className="text-white/70 hover:text-white font-semibold transition-colors">Refund & Cancellation</a>
+           <Link to="/refund-policy" onClick={() => window.scrollTo(0,0)} className="text-white/70 hover:text-white font-semibold transition-colors cursor-pointer">Refund & Cancellation</Link>
         </div>
 
         <div className="flex flex-col items-center md:items-end gap-6">

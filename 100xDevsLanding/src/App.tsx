@@ -15,6 +15,7 @@ import { ContactSection } from './components/sections/ContactSection';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { TermsPage } from './pages/TermsPage';
 import { PrivacyPage } from './pages/PrivacyPage';
+import { RefundPage } from './pages/RefundPage';
 
 function LandingPage() {
   return (
@@ -46,6 +47,7 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/privacy-policy" element={<PrivacyPage />} />
+            <Route path="/refund-policy" element={<RefundPage />} />
           </Routes>
         </main>
 
