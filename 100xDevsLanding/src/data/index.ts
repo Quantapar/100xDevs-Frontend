@@ -110,6 +110,99 @@ export const cohorts = [
   }
 ];
 
+export const oldPrograms = [
+  {
+    title: "Complete Web Development + Devops + Blockchain Cohort",
+    desc: "Complete syllabus - https://blog.100xdevs.com/ Starts 2nd August 2024",
+    price: "₹5,989",
+    oldPrice: "₹8,499",
+    priceUsd: "$72.10",
+    oldPriceUsd: "$108.16",
+    discount: "30% off",
+    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_9746534586545286.jpg"
+  },
+  {
+    title: "Complete Web development + Devops Cohort",
+    desc: "Starts 2nd August 2024 Complete syllabus - https://blog.100xdevs.com/",
+    price: "₹4,989",
+    oldPrice: "₹5,999",
+    priceUsd: "$60.00",
+    oldPriceUsd: "$72.10",
+    discount: "17% off",
+    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_3591256197462771.jpeg"
+  },
+  {
+    title: "Complete Web3/Blockchain Cohort",
+    desc: "Complete syllabus - https://blog.100xdevs.com/ Starts 2nd August 2024",
+    price: "₹4,989",
+    oldPrice: "₹5,999",
+    priceUsd: "$60.00",
+    oldPriceUsd: "$72.10",
+    discount: "17% off",
+    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_14005359899502445.jpeg"
+  },
+  {
+    title: "Complete Web Development Cohort",
+    desc: "Complete syllabus - https://blog.100xdevs.com/ Starts 2nd August 2024",
+    price: "₹2,989",
+    oldPrice: "₹3,999",
+    priceUsd: "$36.00",
+    oldPriceUsd: "$48.06",
+    discount: "26% off",
+    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_6191871226534383.jpeg"
+  },
+  {
+    title: "Complete Devops Cohort",
+    desc: "Complete syllabus - https://blog.100xdevs.com/ In the Devops Cohort...",
+    price: "₹2,989",
+    oldPrice: "₹3,999",
+    priceUsd: "$36.00",
+    oldPriceUsd: "$48.06",
+    discount: "26% off",
+    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_5294406977112471.jpeg"
+  },
+  {
+    title: "Live 0-100 Complete",
+    desc: "Go from 0 to 100 with Harkirat Singh Live. Learn basics to advanced MERN...",
+    price: "₹5,589",
+    oldPrice: "₹7,999",
+    priceUsd: "$67.00",
+    oldPriceUsd: "$96.00",
+    discount: "31% off",
+    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_7921470593092867.jpg"
+  },
+  {
+    title: "Live 0-1",
+    desc: "Learn MERN basics, open source and portfolio building from scratch.",
+    price: "₹2,989",
+    oldPrice: "₹3,999",
+    priceUsd: "$36.00",
+    oldPriceUsd: "$48.06",
+    discount: "26% off",
+    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_6241552223044127.jpg"
+  },
+  {
+    title: "Live 1-100",
+    desc: "System design, advanced backend, and advanced devops for scaling.",
+    price: "₹2,989",
+    oldPrice: "₹3,999",
+    priceUsd: "$36.00",
+    oldPriceUsd: "$48.06",
+    discount: "26% off",
+    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_035738282034753155.jpg"
+  },
+  {
+    title: "Live Full Stack Open Source Cohort 1",
+    desc: "Deep dive into JS/TS, Open source contributions and assignments.",
+    price: "₹2,989",
+    oldPrice: "₹4,999",
+    priceUsd: "$36.00",
+    oldPriceUsd: "$60.00",
+    discount: "40% off",
+    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_7283497422556585.jpg"
+  }
+];
+
 export const podcasts = [
   {
     id: "dRXq81Om2a4",
