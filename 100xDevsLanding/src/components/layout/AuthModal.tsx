@@ -1,13 +1,19 @@
 import { Link } from 'react-router-dom';
-import { X, Code2 } from 'lucide-react';
-import { useEffect } from 'react';
+import { X, Code2, ArrowLeft } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 interface AuthModalProps {
   isOpen: boolean;
+  mode?: 'login' | 'signup';
   onClose: () => void;
 }
 
-export function AuthModal({ isOpen, onClose }: AuthModalProps) {
+export function AuthModal({ isOpen, mode = 'login', onClose }: AuthModalProps) {
+  const [currentMode, setCurrentMode] = useState<'login' | 'signup'>(mode);
+
+  useEffect(() => {
+    setCurrentMode(mode);
+  }, [mode, isOpen]);
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -22,11 +28,12 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 sm:p-6 bg-[#04102d]/60 backdrop-blur-sm transition-opacity" onClick={onClose}>
-      <div 
-        className="w-full max-w-4xl bg-white border-2 border-[#04102d] rounded-[32px] shadow-[12px_12px_0_#0bae95] p-2.5 flex flex-col md:flex-row relative animate-in zoom-in-95 duration-200"
-        onClick={e => e.stopPropagation()}
-      >
+    <div className="fixed inset-0 z-[1000] bg-[#04102d]/60 backdrop-blur-sm transition-opacity overflow-y-auto" onClick={onClose}>
+      <div className="min-h-screen flex items-center justify-center p-4 sm:p-6 pb-20">
+        <div 
+          className="w-full max-w-4xl bg-white border-2 border-[#04102d] rounded-[32px] shadow-[12px_12px_0_#0bae95] p-2.5 flex flex-col md:flex-row relative animate-in zoom-in-95 duration-200"
+          onClick={e => e.stopPropagation()}
+        >
         <button 
           onClick={onClose}
           className="absolute top-6 right-6 w-10 h-10 bg-white hover:bg-gray-100 rounded-full flex items-center justify-center transition-colors z-50 border-2 border-[#04102d] text-[#04102d] shadow-[2px_2px_0_#04102d] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none cursor-pointer"
@@ -55,32 +62,108 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
           </div>
         </div>
 
-        <div className="w-full md:w-[52%] p-8 lg:p-12 flex flex-col pt-12 md:pt-12">
-           <div className="flex justify-center mb-8 lg:mb-12">
-             <span className="text-[32px] font-black tracking-tighter text-[#04102d]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+        <div className="w-full md:w-[52%] p-8 lg:p-12 flex flex-col pt-12 md:pt-12 relative">
+           
+           <div className="flex items-center justify-center mb-8 lg:mb-12 relative w-full">
+             {currentMode === 'signup' && (
+                <button 
+                  onClick={(e) => { e.stopPropagation(); setCurrentMode('login'); }}
+                  className="absolute left-0 w-8 h-8 rounded-full bg-gray-400 hover:bg-gray-500 flex items-center justify-center text-white transition-colors cursor-pointer"
+                >
+                  <ArrowLeft className="w-4 h-4" strokeWidth={3} />
+                </button>
+             )}
+             <span className="text-[28px] sm:text-[32px] font-black tracking-tighter text-[#04102d]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                100<span className="text-[#e13a45]">x</span>Devs
              </span>
            </div>
 
-           <h3 className="text-[24px] lg:text-[26px] font-black text-[#04102d] mb-6 md:mb-8 text-center md:text-left leading-tight">Sign in to your account</h3>
+           <h3 className="text-[22px] lg:text-[24px] font-bold text-[#04102d] mb-6 md:mb-8 text-center md:text-left leading-tight">
+             {currentMode === 'login' ? 'Sign in to your account' : 'Create your account'}
+           </h3>
 
-           <form className="flex flex-col gap-6" onSubmit={e => e.preventDefault()}>
-              <div>
-                <label className="block text-[15px] font-black text-[#04102d] mb-2">Email or Phone</label>
-                <input 
-                  type="text" 
-                  placeholder="Enter your phone number or email"
-                  className="w-full border-2 border-[#04102d] rounded-[14px] px-5 py-3.5 bg-gray-50 focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#0bae95]/20 font-bold text-[#04102d] placeholder:text-gray-400/80 transition-all font-sans text-[15px]"
-                />
-                <p className="text-[13px] text-[#04102d]/60 font-bold mt-2.5">
-                  Please add country code if you are a user outside of India
-                </p>
-              </div>
+           {currentMode === 'login' ? (
+             <form className="flex flex-col gap-6" onSubmit={e => e.preventDefault()}>
+                <div>
+                  <label className="block text-[15px] font-bold text-[#04102d] mb-2">Email or Phone</label>
+                  <input 
+                    type="text" 
+                    placeholder="Enter your phone number or email"
+                    className="w-full border border-gray-300 rounded-[10px] px-4 py-3 bg-white focus:outline-none focus:border-[#0bae95] focus:ring-1 focus:ring-[#0bae95] font-semibold text-[#04102d] placeholder:text-gray-400 transition-all text-[15px]"
+                  />
+                  <p className="text-[13px] text-[#04102d]/60 font-semibold mt-2.5">
+                    Please add country code if you are a user outside of India
+                  </p>
+                </div>
 
-              <button className="w-full bg-[#04102d] text-white py-4 mt-2 rounded-[14px] font-black tracking-wide border-2 border-[#04102d] shadow-[4px_4px_0_#0bae95] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#0bae95] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px] text-lg cursor-pointer flex items-center justify-center">
-                Continue
-              </button>
-           </form>
+                <button className="w-full bg-[#04102d] text-white py-3.5 mt-2 rounded-[10px] font-bold text-[16px] transition-all cursor-pointer flex items-center justify-center hover:bg-[#081840]">
+                  Continue
+                </button>
+             </form>
+           ) : (
+             <form className="flex flex-col gap-4" onSubmit={e => e.preventDefault()}>
+                <div>
+                  <label className="block text-[13px] font-bold text-[#04102d] mb-1.5">Full Name</label>
+                  <input 
+                    type="text" 
+                    placeholder="Enter your full name"
+                    className="w-full border border-gray-300 rounded-[10px] px-4 py-2.5 bg-white focus:outline-none focus:border-[#0bae95] focus:ring-1 focus:ring-[#0bae95] font-semibold text-[#04102d] placeholder:text-gray-400 transition-all text-[14px]"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-[13px] font-bold text-[#04102d] mb-1.5">Email Address</label>
+                  <input 
+                    type="email" 
+                    placeholder="Enter your email address"
+                    className="w-full border border-gray-300 rounded-[10px] px-4 py-2.5 bg-white focus:outline-none focus:border-[#0bae95] focus:ring-1 focus:ring-[#0bae95] font-semibold text-[#04102d] placeholder:text-gray-400 transition-all text-[14px]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-[13px] font-bold text-[#04102d] mb-1.5">Phone Number</label>
+                  <input 
+                    type="text" 
+                    placeholder="Enter your phone number (with country code)"
+                    className="w-full border border-gray-400 rounded-[10px] px-4 py-2.5 bg-white focus:outline-none focus:border-[#0bae95] focus:ring-1 focus:ring-[#0bae95] font-semibold text-[#04102d] placeholder:text-gray-400 transition-all text-[14px]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-[13px] font-bold text-[#04102d] mb-1.5">State</label>
+                  <select 
+                    className="w-full border border-gray-300 rounded-[10px] px-4 py-2.5 bg-white focus:outline-none focus:border-[#0bae95] focus:ring-1 focus:ring-[#0bae95] font-semibold text-gray-500 appearance-none transition-all text-[14px]"
+                    defaultValue=""
+                  >
+                    <option value="" disabled>Select your state</option>
+                    <option value="mh">Maharashtra</option>
+                    <option value="dl">Delhi</option>
+                    <option value="ka">Karnataka</option>
+                    <option value="ts">Telangana</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-[13px] font-bold text-[#04102d] mb-1.5">Password</label>
+                  <input 
+                    type="password" 
+                    placeholder="Create a strong password"
+                    className="w-full border border-gray-300 rounded-[10px] px-4 py-2.5 bg-white focus:outline-none focus:border-[#0bae95] focus:ring-1 focus:ring-[#0bae95] font-semibold text-[#04102d] placeholder:text-gray-400 transition-all text-[14px]"
+                  />
+                </div>
+
+                <button className="w-full bg-[#04102d] text-white py-3 mt-2 rounded-[10px] font-bold tracking-wide transition-all text-[15px] cursor-pointer flex items-center justify-center hover:bg-[#081840]">
+                  Sign up
+                </button>
+
+                <div className="text-center mt-1">
+                  <span className="text-[13px] text-gray-600 font-bold">Already have an account? </span>
+                  <button type="button" onClick={() => setCurrentMode('login')} className="text-[13px] text-[#04102d] font-bold underline hover:text-[#0bae95] cursor-pointer">
+                    Log in
+                  </button>
+                </div>
+             </form>
+           )}
 
            <div className="mt-8 md:mt-auto pt-6 text-center md:text-left">
              <p className="text-[13px] font-bold text-[#04102d]/70">
@@ -89,6 +172,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
            </div>
         </div>
 
+      </div>
       </div>
     </div>
   );

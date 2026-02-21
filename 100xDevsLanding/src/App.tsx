@@ -12,7 +12,6 @@ import { CommunitySection } from './components/sections/CommunitySection';
 import { FaqSection } from './components/sections/FaqSection';
 import { ContactSection } from './components/sections/ContactSection';
 import { CurrencyProvider } from './context/CurrencyContext';
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { TermsPage } from './pages/TermsPage';
 import { PrivacyPage } from './pages/PrivacyPage';
@@ -39,14 +38,14 @@ function LandingPage() {
 }
 
 function App() {
-  const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const [authModalConfig, setAuthModalConfig] = useState<{isOpen: boolean, mode: 'login' | 'signup'}>({isOpen: false, mode: 'login'});
 
   return (
     <BrowserRouter>
       <CurrencyProvider>
         <div className="min-h-screen flex flex-col text-[#04102d] font-sans overflow-x-hidden relative">
-          <AuthModal isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} />
-          <Navbar onOpenAuth={() => setIsAuthOpen(true)} />
+          <AuthModal isOpen={authModalConfig.isOpen} mode={authModalConfig.mode} onClose={() => setAuthModalConfig({...authModalConfig, isOpen: false})} />
+          <Navbar onOpenAuth={(mode) => setAuthModalConfig({isOpen: true, mode})} />
           
           <main className="flex-grow">
             <Routes>

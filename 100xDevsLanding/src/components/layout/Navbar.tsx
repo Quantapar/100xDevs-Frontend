@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
-export function Navbar({ onOpenAuth }: { onOpenAuth: () => void }) {
+export function Navbar({ onOpenAuth }: { onOpenAuth: (mode: 'login' | 'signup') => void }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -21,16 +21,16 @@ export function Navbar({ onOpenAuth }: { onOpenAuth: () => void }) {
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
-          <button onClick={onOpenAuth} className="px-5 py-2.5 rounded-xl font-bold border-2 border-[#04102d] bg-[#e2eafb] hover:bg-[#d1def8] transition-colors shadow-[2px_2px_0_#04102d] cursor-pointer">
+          <button onClick={() => onOpenAuth('signup')} className="px-5 py-2.5 rounded-xl font-bold border-2 border-[#04102d] bg-[#e2eafb] hover:bg-[#d1def8] transition-colors shadow-[2px_2px_0_#04102d] cursor-pointer">
             Sign up
           </button>
-          <button onClick={onOpenAuth} className="px-5 py-2.5 rounded-xl bg-[#04102d] text-white hover:bg-gray-800 font-bold transition-colors border-2 border-transparent shadow-[2px_2px_0_#04102d] cursor-pointer">
+          <button onClick={() => onOpenAuth('login')} className="px-5 py-2.5 rounded-xl bg-[#04102d] text-white hover:bg-gray-800 font-bold transition-colors border-2 border-transparent shadow-[2px_2px_0_#04102d] cursor-pointer">
             Log in
           </button>
         </div>
 
         <div className="lg:hidden flex items-center gap-3">
-          <button onClick={onOpenAuth} className="px-4 py-2 rounded-xl bg-[#04102d] text-white hover:bg-gray-800 font-bold sm:font-bold text-sm sm:text-base border-2 border-[#04102d] shadow-[2px_2px_0_#0bae95] transition-all cursor-pointer">
+          <button onClick={() => onOpenAuth('login')} className="px-4 py-2 rounded-xl bg-[#04102d] text-white hover:bg-gray-800 font-bold sm:font-bold text-sm sm:text-base border-2 border-[#04102d] shadow-[2px_2px_0_#0bae95] transition-all cursor-pointer">
             Log in
           </button>
           <button 
@@ -56,7 +56,7 @@ export function Navbar({ onOpenAuth }: { onOpenAuth: () => void }) {
           </Link>
           
           <button 
-            onClick={() => { setIsOpen(false); onOpenAuth(); }} 
+            onClick={() => { setIsOpen(false); onOpenAuth('signup'); }} 
             className="mt-6 w-full py-3 rounded-xl font-black border-4 border-[#04102d] bg-[#e2eafb] text-[#04102d] hover:bg-[#d1def8] shadow-[4px_4px_0_#04102d]"
           >
             Sign up
