@@ -91,7 +91,7 @@ export function CoursesPage() {
              const oldPrice = formatPrice(course.oldPriceInr, curr);
 
              return (
-            <div key={key} className={`w-full bg-white rounded-[24px] border-4 border-[#04102d] shadow-[8px_8px_0_#04102d] hover:shadow-[12px_12px_0_#0bae95] hover:-translate-y-1 transition-all duration-300 flex flex-col md:flex-row items-stretch group cursor-pointer relative ${openDropdown === key ? 'z-50' : 'z-10'}`}>
+            <div key={key} onClick={() => navigate(`/new-courses/${course.id}`)} className={`w-full bg-white rounded-[24px] border-4 border-[#04102d] shadow-[8px_8px_0_#04102d] hover:shadow-[12px_12px_0_#0bae95] hover:-translate-y-1 transition-all duration-300 flex flex-col md:flex-row items-stretch group cursor-pointer relative ${openDropdown === key ? 'z-50' : 'z-10'}`}>
               
               <div className="w-full md:w-[48%] flex-shrink-0 relative border-b-4 md:border-b-0 md:border-r-4 border-[#04102d] bg-white flex items-center justify-center rounded-t-[20px] md:rounded-l-[20px] md:rounded-tr-none overflow-hidden">
                 <div className="absolute inset-0 opacity-[0.04] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none"></div>
@@ -151,7 +151,10 @@ export function CoursesPage() {
                       )}
                     </div>
                     
-                    <button className="w-full sm:flex-grow bg-[#04102d] text-white py-3 rounded-[12px] font-black tracking-wide border-[3px] border-[#04102d] shadow-[3px_3px_0_#0bae95] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0_#0bae95] transition-all text-[16px] cursor-pointer flex items-center justify-center gap-2">
+                    <button 
+                      onClick={(e) => { e.stopPropagation(); navigate(`/new-courses/${course.id}`); }}
+                      className="w-full sm:flex-grow bg-[#04102d] text-white py-3 rounded-[12px] font-black tracking-wide border-[3px] border-[#04102d] shadow-[3px_3px_0_#0bae95] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0_#0bae95] transition-all text-[16px] cursor-pointer flex items-center justify-center gap-2"
+                    >
                       View Details
                     </button>
                     
@@ -176,7 +179,7 @@ export function CoursesPage() {
              const oldPrice = formatPrice(course.oldPriceInr, curr);
 
              return (
-            <div key={key} className={`w-full bg-white rounded-[24px] border-4 border-[#04102d] shadow-[8px_8px_0_#04102d] hover:shadow-[12px_12px_0_#0bae95] hover:-translate-y-1 transition-all duration-300 flex flex-col group cursor-pointer relative ${openDropdown === key ? 'z-50' : 'z-10'}`}>
+            <div key={key} onClick={() => navigate(`/new-courses/${(course as any).id}`)} className={`w-full bg-white rounded-[24px] border-4 border-[#04102d] shadow-[8px_8px_0_#04102d] hover:shadow-[12px_12px_0_#0bae95] hover:-translate-y-1 transition-all duration-300 flex flex-col group cursor-pointer relative ${openDropdown === key ? 'z-50' : 'z-10'}`}>
               
               <div className="w-full relative border-b-4 border-[#04102d] bg-white flex items-center justify-center rounded-t-[20px] overflow-hidden p-4">
                 <div className="absolute inset-0 opacity-[0.04] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none"></div>
@@ -237,7 +240,7 @@ export function CoursesPage() {
                     </div>
                     
                     <button 
-                      onClick={(e) => { e.stopPropagation(); navigate(`/new-courses/${(course as any).id || 24}`); }}
+                      onClick={(e) => { e.stopPropagation(); navigate(`/new-courses/${(course as any).id}`); }}
                       className="w-full sm:w-auto flex-grow bg-[#04102d] text-white py-[10px] rounded-[10px] font-black tracking-wide border-[3px] border-[#04102d] shadow-[3px_3px_0_#0bae95] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0_#0bae95] transition-all text-[15px] cursor-pointer flex items-center justify-center gap-2"
                     >
                       View Details

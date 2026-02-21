@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { cohorts } from '../data';
+import { cohorts, oldPrograms } from '../data';
 import { useEffect, useState } from 'react';
 import { ChevronDown, CheckCircle2, Code, FileText, MessageSquare, TrendingUp, UserCheck, Users } from 'lucide-react';
 import { useCurrency } from '../context/CurrencyContext';
@@ -77,7 +77,7 @@ export function CourseDetailsPage() {
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
   const { formatPrice } = useCurrency();
   
-  const course = cohorts.find(c => c.id === Number(id)) || cohorts[0];
+  const course = cohorts.find(c => c.id === Number(id)) || oldPrograms.find((c: any) => c.id === Number(id)) || cohorts[0];
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -94,7 +94,24 @@ export function CourseDetailsPage() {
   const tags = ["Web3 Fundamentals", "Cloud Computing", "React & Node.js", "Full Stack Development"];
 
   let syllabusData = [];
-  if (course.id === 25) {
+  if ((course as any).id > 100) {
+    const cid = (course as any).id;
+    if (cid === 101) syllabusData = [allSyllabusData.webDev, allSyllabusData.devOps, allSyllabusData.web3];
+    else if (cid === 102) syllabusData = [allSyllabusData.webDev, allSyllabusData.devOps];
+    else if (cid === 103) syllabusData = [allSyllabusData.web3];
+    else if (cid === 104) syllabusData = [allSyllabusData.webDev];
+    else if (cid === 105) syllabusData = [allSyllabusData.devOps];
+    else if (cid === 106) syllabusData = [allSyllabusData.webDev, allSyllabusData.devOps];
+    else if (cid === 107) syllabusData = [allSyllabusData.webDev];
+    else if (cid === 108) syllabusData = [allSyllabusData.devOps];
+    else if (cid === 109) syllabusData = [allSyllabusData.webDev, allSyllabusData.devOps];
+    else syllabusData = [allSyllabusData.webDev, allSyllabusData.devOps, allSyllabusData.web3];
+
+    syllabusData = syllabusData.map(section => ({
+      ...section,
+      title: section.title.replace(/\s*\(Every.*?\)/i, '')
+    }));
+  } else if (course.id === 25) {
     syllabusData = [allSyllabusData.webDev, allSyllabusData.devOps];
   } else if (course.id === 26) {
     syllabusData = [allSyllabusData.web3];
@@ -207,7 +224,7 @@ export function CourseDetailsPage() {
                ))}
             </div>
 
-           <div className="lg:col-span-4 w-full">
+           <div className="lg:col-span-5 w-full">
               <div className="bg-white rounded-[24px] border-4 border-[#04102d] shadow-[12px_12px_0_#0bae95] overflow-hidden sticky top-24">
                 <div className="w-full aspect-[16/9] relative bg-[#e2eafb] border-b-4 border-[#04102d]">
                   <img src={course.imgUrl} alt="Thumbnail" className="w-full h-full object-cover" />
@@ -335,7 +352,7 @@ export function CourseDetailsPage() {
           </div>
         </div>
 
-        {/* Career Outcomes Section */}
+        
         <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-4xl lg:text-5xl font-black text-[#04102d] tracking-tight mb-4">Career Outcomes</h2>
