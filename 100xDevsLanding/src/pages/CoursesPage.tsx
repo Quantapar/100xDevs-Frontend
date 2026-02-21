@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState} from 'react';
 import { Search, ChevronDown, Briefcase, Users, Zap } from 'lucide-react';
 import { cohorts, oldPrograms } from '../data';
 import { useCurrency } from '../context/CurrencyContext';
