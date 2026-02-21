@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {  Youtube, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 export function Footer() {
@@ -12,23 +13,23 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-4 text-center md:text-left">
-           <a href="#" className="text-white/70 hover:text-white font-semibold transition-colors">Terms & Conditions</a>
-           <a href="#" className="text-white/70 hover:text-white font-semibold transition-colors">Privacy Policy</a>
+           <Link to="/terms" onClick={() => window.scrollTo(0,0)} className="text-white/70 hover:text-white font-semibold transition-colors cursor-pointer">Terms & Conditions</Link>
+           <Link to="/privacy-policy" onClick={() => window.scrollTo(0,0)} className="text-white/70 hover:text-white font-semibold transition-colors cursor-pointer">Privacy Policy</Link>
            <a href="#" className="text-white/70 hover:text-white font-semibold transition-colors">Refund & Cancellation</a>
         </div>
 
         <div className="flex flex-col items-center md:items-end gap-6">
            <div className="flex items-center gap-3">
-              <a href="#" className="w-12 h-12 rounded-[14px] bg-[#1a1a1a] border-2 border-[#333] flex items-center justify-center text-white hover:bg-[#333] hover:-translate-y-1 transition-all cursor-pointer">
+              <a href="https://www.youtube.com/@harkirat1" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-[14px] bg-[#1a1a1a] border-2 border-[#333] flex items-center justify-center text-white hover:bg-[#333] hover:text-[#ff0000] transition-colors cursor-pointer">
                  <Youtube className="w-5 h-5" />
               </a>
-              <a href="#" className="w-12 h-12 rounded-[14px] bg-[#1a1a1a] border-2 border-[#333] flex items-center justify-center text-white hover:bg-[#333] hover:-translate-y-1 transition-all cursor-pointer">
+              <a href="https://x.com/kirat_tw" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-[14px] bg-[#1a1a1a] border-2 border-[#333] flex items-center justify-center text-white hover:bg-[#333] hover:text-[#1da1f2] transition-colors cursor-pointer">
                  <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="w-12 h-12 rounded-[14px] bg-[#1a1a1a] border-2 border-[#333] flex items-center justify-center text-white hover:bg-[#333] hover:-translate-y-1 transition-all cursor-pointer">
+              <a href="https://www.instagram.com/kirat_ins/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-[14px] bg-[#1a1a1a] border-2 border-[#333] flex items-center justify-center text-white hover:bg-[#333] hover:text-[#e1306c] transition-colors cursor-pointer">
                  <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-12 h-12 rounded-[14px] bg-[#1a1a1a] border-2 border-[#333] flex items-center justify-center text-white hover:bg-[#333] hover:-translate-y-1 transition-all cursor-pointer">
+              <a href="https://www.linkedin.com/company/100xdevs/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-[14px] bg-[#1a1a1a] border-2 border-[#333] flex items-center justify-center text-white hover:bg-[#333] hover:text-[#0a66c2] transition-colors cursor-pointer">
                  <Linkedin className="w-5 h-5" />
               </a>
            </div>

@@ -44,9 +44,9 @@ export function CohortsSection() {
                    </p>
                    
                    <div className="flex flex-wrap items-center justify-between mt-auto mb-8 gap-4">
-                      <div className="flex items-end gap-2">
+                      <div className="flex items-center gap-3">
                          <span className="text-[40px] lg:text-[48px] font-black text-[#04102d] leading-none tracking-tight">{price}</span>
-                         <span className="text-xl font-bold text-[#04102d]/40 line-through mb-1">{oldPrice}</span>
+                         <span className="text-xl lg:text-2xl font-bold text-[#04102d]/40 line-through">{oldPrice}</span>
                       </div>
                       <span className="bg-[#E5FBB8] border-2 border-[#04102d] px-4 py-2 rounded-full text-[14px] font-black text-[#04102d] shadow-[2px_2px_0_#04102d]">
                          {featuredCourse.discount}
@@ -112,9 +112,9 @@ export function CohortsSection() {
                      </p>
                      
                      <div className="flex items-center justify-between mb-8">
-                        <div className="flex items-end gap-2">
+                        <div className="flex items-center gap-2">
                            <span className="text-[32px] font-black text-[#04102d] leading-none tracking-tight">{price}</span>
-                           <span className="text-lg font-bold text-[#04102d]/40 line-through mb-1">{oldPrice}</span>
+                           <span className="text-lg font-bold text-[#04102d]/40 line-through">{oldPrice}</span>
                         </div>
                         <span className="bg-[#E5FBB8] border-2 border-[#04102d] px-3 py-1 rounded-full text-[13px] font-black text-[#04102d] shadow-[2px_2px_0_#04102d]">
                            {course.discount}

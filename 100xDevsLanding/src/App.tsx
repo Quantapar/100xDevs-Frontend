@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
+import { AuthModal } from './components/layout/AuthModal';
 import { HeroSection } from './components/sections/HeroSection';
 import { StatsSection } from './components/sections/StatsSection';
 import { InfoBoxesSection } from './components/sections/InfoBoxesSection';
@@ -10,10 +12,13 @@ import { CommunitySection } from './components/sections/CommunitySection';
 import { FaqSection } from './components/sections/FaqSection';
 import { ContactSection } from './components/sections/ContactSection';
 
-function App() {
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { TermsPage } from './pages/TermsPage';
+import { PrivacyPage } from './pages/PrivacyPage';
+
+function LandingPage() {
   return (
-    <div className="min-h-screen text-[#04102d] font-sans overflow-x-hidden">
-      <Navbar />
+    <>
       <HeroSection />
       <StatsSection />
       <InfoBoxesSection />
@@ -23,8 +28,30 @@ function App() {
       <CommunitySection />
       <FaqSection />
       <ContactSection />
-      <Footer />
-    </div>
+    </>
+  );
+}
+
+function App() {
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
+
+  return (
+    <BrowserRouter>
+      <div className="min-h-screen flex flex-col text-[#04102d] font-sans overflow-x-hidden relative">
+        <AuthModal isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} />
+        <Navbar onOpenAuth={() => setIsAuthOpen(true)} />
+        
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPage />} />
+          </Routes>
+        </main>
+
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
