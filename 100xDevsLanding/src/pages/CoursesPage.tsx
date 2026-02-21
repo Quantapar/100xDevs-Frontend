@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Search, ChevronDown, Briefcase, Users, Zap } from 'lucide-react';
 import { cohorts, oldPrograms } from '../data';
 import { useCurrency } from '../context/CurrencyContext';
@@ -7,8 +7,15 @@ import { useNavigate } from 'react-router-dom';
 export function CoursesPage() {
   const [currencyMap, setCurrencyMap] = useState<Record<string, 'INR' | 'USD'>>({});
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [showSuggestions, setShowSuggestions] = useState(false);
   const { formatPrice } = useCurrency();
   const navigate = useNavigate();
+
+  const allCourses = [...cohorts, ...oldPrograms];
+  const searchResults = searchQuery.trim() 
+    ? allCourses.filter(c => c.title.toLowerCase().includes(searchQuery.toLowerCase()) || c.desc.toLowerCase().includes(searchQuery.toLowerCase())).slice(0, 5) 
+    : [];
 
   const getCurrency = (id: string) => currencyMap[id] || 'INR';
   const toggleDropdown = (id: string, e: React.MouseEvent) => {
@@ -22,19 +29,20 @@ export function CoursesPage() {
   };
 
   return (
-    <div className="w-full flex flex-col flex-grow bg-[#f8f9fa]" onClick={() => openDropdown !== null && setOpenDropdown(null)}>
+    <div className="w-full flex flex-col flex-grow bg-[#f8f9fa]" onClick={() => { openDropdown !== null && setOpenDropdown(null); showSuggestions && setShowSuggestions(false); }}>
      
-      <div className="w-full flex justify-center pt-8 pb-8 sm:pt-12 sm:pb-12 lg:pt-16 lg:pb-16 bg-white overflow-hidden">
+      <div className="w-full flex justify-center pt-8 pb-8 sm:pt-12 sm:pb-12 lg:pt-16 lg:pb-16 bg-white">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="relative w-full rounded-[32px] border-4 border-[#04102d] shadow-[8px_8px_0_#0bae95] lg:shadow-[12px_12px_0_#0bae95] overflow-hidden flex flex-col items-center justify-center px-4 py-8 sm:p-10 lg:p-20 group">
+          <div className="relative w-full rounded-[32px] border-4 border-[#04102d] shadow-[8px_8px_0_#0bae95] lg:shadow-[12px_12px_0_#0bae95] flex flex-col items-center justify-center px-4 py-8 sm:p-10 lg:p-20 group">
             
-            <div 
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-105" 
-              style={{ backgroundImage: "url('https://100xdevs.com/banner.webp')" }}
-            ></div>
-            
-            <div className="absolute inset-0 bg-[#04102d]/60 mix-blend-multiply z-10 transition-opacity duration-700 group-hover:opacity-80"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#04102d]/95 via-[#04102d]/60 to-[#04102d]/80 z-10"></div>
+            <div className="absolute inset-0 rounded-[28px] overflow-hidden pointer-events-none">
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-105" 
+                style={{ backgroundImage: "url('https://100xdevs.com/banner.webp')" }}
+              ></div>
+              <div className="absolute inset-0 bg-[#04102d]/60 mix-blend-multiply z-10 transition-opacity duration-700 group-hover:opacity-80"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#04102d]/95 via-[#04102d]/60 to-[#04102d]/80 z-10"></div>
+            </div>
 
             <div className="relative z-20 w-full flex flex-col items-center text-center">
               
@@ -68,9 +76,32 @@ export function CoursesPage() {
                   <input 
                     type="text" 
                     placeholder="Search for courses, topics..." 
+                    value={searchQuery}
+                    onChange={(e) => { setSearchQuery(e.target.value); setShowSuggestions(true); }}
+                    onFocus={() => setShowSuggestions(true)}
                     className="w-full bg-transparent border-none outline-none py-3 lg:py-4 pr-5 text-base font-bold text-[#04102d] placeholder:text-[#04102d]/40"
                   />
                 </div>
+                {showSuggestions && searchQuery.trim() && searchResults.length > 0 && (
+                  <div className="absolute top-full text-left left-0 right-0 mt-2 bg-white border-4 border-[#04102d] rounded-[20px] shadow-[6px_6px_0_#0bae95] overflow-hidden z-[100] flex flex-col animate-in fade-in slide-in-from-top-2 duration-200" onClick={(e) => e.stopPropagation()}>
+                    {searchResults.map((course: any) => (
+                      <div 
+                        key={course.id}
+                        onClick={() => { navigate(`/new-courses/${course.id}`); setSearchQuery(''); setShowSuggestions(false); }}
+                        className="px-5 py-3 border-b-2 border-slate-100 hover:bg-[#f0f9ff] flex flex-col gap-1 cursor-pointer transition-colors last:border-b-0"
+                      >
+                         <p className="font-bold text-[#04102d] text-[15px] truncate">{course.title}</p>
+                         <p className="text-[13px] text-gray-500 font-medium truncate">{course.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {showSuggestions && searchQuery.trim() && searchResults.length === 0 && (
+                  <div className="absolute top-full left-0 right-0 mt-2 bg-white border-4 border-[#04102d] rounded-[20px] shadow-[6px_6px_0_#0bae95] overflow-hidden z-[100] p-6 text-center animate-in fade-in slide-in-from-top-2 duration-200" onClick={(e) => e.stopPropagation()}>
+                    <p className="font-bold text-[#04102d] text-[15px]">No matching courses found</p>
+                    <p className="font-medium text-[13px] text-gray-500 mt-1">Try another search term.</p>
+                  </div>
+                )}
               </div>
 
             </div>
