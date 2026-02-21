@@ -17,6 +17,7 @@ import { TermsPage } from './pages/TermsPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { RefundPage } from './pages/RefundPage';
 import { StorePage } from './pages/StorePage';
+import { CoursesPage } from './pages/CoursesPage';
 
 function LandingPage() {
   return (
@@ -50,6 +51,7 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPage />} />
             <Route path="/refund-policy" element={<RefundPage />} />
             <Route path="/store" element={<StorePage />} />
+            <Route path="/courses" element={<CoursesPage />} />
           </Routes>
         </main>
 

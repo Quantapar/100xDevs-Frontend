@@ -12,7 +12,7 @@ export function Navbar({ onOpenAuth }: { onOpenAuth: () => void }) {
         
         <div className="hidden lg:flex items-center gap-8 font-semibold text-[15px] text-[#04102d]/80">
           <Link to="/" className="hover:text-[#04102d] transition-colors cursor-pointer">Home</Link>
-          <a href="#" className="hover:text-[#04102d] transition-colors">Courses</a>
+          <Link to="/courses" className="hover:text-[#04102d] transition-colors cursor-pointer">Courses</Link>
           <Link to="/store" className="hover:text-[#04102d] transition-colors cursor-pointer">Store</Link>
         </div>
 
