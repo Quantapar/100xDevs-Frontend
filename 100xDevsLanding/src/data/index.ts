@@ -73,6 +73,8 @@ export const cohorts = [
     desc: "Web dev (Every Friday) Devops (Every Friday) Machine Learning and AI (Every Saturday)...",
     price: "₹5,999",
     oldPrice: "₹8,999",
+    priceUsd: "US$72.10",
+    oldPriceUsd: "US$108.16",
     discount: "34% off",
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_6302172904491252.jpg"
   },
@@ -81,6 +83,8 @@ export const cohorts = [
     desc: "Complete Typescript + MERN stack, Complete Devops, System design, Projects",
     price: "₹3,999",
     oldPrice: "₹5,999",
+    priceUsd: "$48.06",
+    oldPriceUsd: "US$72.10",
     discount: "34% off",
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_0916663009561891.jpg"
   },
@@ -89,6 +93,8 @@ export const cohorts = [
     desc: "Complete Solana and Web3 Bootcamp",
     price: "₹3,999",
     oldPrice: "₹5,999",
+    priceUsd: "$48.06",
+    oldPriceUsd: "US$72.10",
     discount: "34% off",
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_9482626468382281.jpg"
   },
@@ -97,6 +103,8 @@ export const cohorts = [
     desc: "Classical ML, Attention and its variations, GenAI, Memory and retrieval, Advanced topics",
     price: "₹3,999",
     oldPrice: "₹5,999",
+    priceUsd: "$48.06",
+    oldPriceUsd: "US$72.10",
     discount: "34% off",
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_12723468219857426.jpg"
   }
