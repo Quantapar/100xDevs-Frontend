@@ -42,7 +42,7 @@ export function ProductPage() {
 
   return (
     <div className="w-full flex-grow bg-[#fafafa]">
-      <div className="max-w-7xl mx-auto px-6 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
         <div className="flex items-center gap-2 text-sm font-bold text-[#04102d]/60 mb-12">
           <Link to="/" className="hover:text-[#0bae95] transition-colors cursor-pointer">Home</Link>
           <span>›</span>
@@ -51,7 +51,7 @@ export function ProductPage() {
           <span className="text-[#04102d]">{product.title}</span>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 mb-12 sm:mb-16">
           <div className="w-full flex flex-col gap-4">
             <div className={`w-full aspect-square ${product.bgColor} rounded-[32px] border-4 border-[#04102d] shadow-[8px_8px_0_#04102d] flex items-center justify-center relative overflow-hidden`}>
               <img 
@@ -62,7 +62,7 @@ export function ProductPage() {
             </div>
           </div>
           <div className="w-full flex flex-col pt-4">
-            <h1 className="text-4xl lg:text-5xl font-black text-[#04102d] leading-tight mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#04102d] leading-tight mb-4">
               {product.title}
             </h1>
             
@@ -70,8 +70,8 @@ export function ProductPage() {
               {product.description}
             </p>
 
-            <div className="flex items-center gap-4 mb-12">
-              <span className="text-5xl font-black text-[#04102d]">
+            <div className="flex items-center gap-4 mb-8 sm:mb-12">
+              <span className="text-4xl sm:text-5xl font-black text-[#04102d]">
                 {formatPrice(product.priceInr, 'INR')}
               </span>
               <span className="text-xl font-bold text-[#04102d]/50 line-through">
@@ -116,13 +116,13 @@ export function ProductPage() {
           <div className="border-2 border-[#04102d] bg-white rounded-[24px] overflow-hidden">
             <button 
               onClick={() => toggleAccordion('shipping')}
-              className="w-full px-6 py-5 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors cursor-pointer"
+              className="w-full px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors cursor-pointer"
             >
-              <span className="text-xl font-black text-[#04102d]">Shipping Details</span>
+              <span className="text-lg sm:text-xl font-black text-[#04102d]">Shipping Details</span>
               <ChevronDown className={`w-6 h-6 text-[#04102d] transition-transform ${openAccordion === 'shipping' ? 'rotate-180' : ''}`} />
             </button>
             {openAccordion === 'shipping' && (
-              <div className="px-6 pb-6 pt-2 border-t-2 border-dashed border-gray-200">
+              <div className="px-4 sm:px-6 pb-4 sm:pb-6 pt-2 border-t-2 border-dashed border-gray-200">
                 <ul className="flex flex-col gap-6 pt-4">
                   <li className="flex items-start gap-4">
                     <Package className="w-6 h-6 text-[#0bae95] shrink-0 mt-1" />
@@ -152,13 +152,13 @@ export function ProductPage() {
           <div className="border-2 border-[#04102d] bg-white rounded-[24px] overflow-hidden">
             <button 
               onClick={() => toggleAccordion('material')}
-              className="w-full px-6 py-5 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors cursor-pointer"
+              className="w-full px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors cursor-pointer"
             >
-              <span className="text-xl font-black text-[#04102d]">Material & Care</span>
+              <span className="text-lg sm:text-xl font-black text-[#04102d]">Material & Care</span>
               <ChevronDown className={`w-6 h-6 text-[#04102d] transition-transform ${openAccordion === 'material' ? 'rotate-180' : ''}`} />
             </button>
             {openAccordion === 'material' && (
-              <div className="px-6 pb-6 pt-2 border-t-2 border-dashed border-gray-200">
+              <div className="px-4 sm:px-6 pb-4 sm:pb-6 pt-2 border-t-2 border-dashed border-gray-200">
                 <div className="pt-4">
                   <div className="mb-6">
                     <p className="font-bold text-[#0bae95] mb-2">Fabric Composition</p>
@@ -181,13 +181,13 @@ export function ProductPage() {
           <div className="border-2 border-[#04102d] bg-white rounded-[24px] overflow-hidden">
             <button 
               onClick={() => toggleAccordion('size')}
-              className="w-full px-6 py-5 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors cursor-pointer"
+              className="w-full px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors cursor-pointer"
             >
-              <span className="text-xl font-black text-[#04102d]">Size & Fit</span>
+              <span className="text-lg sm:text-xl font-black text-[#04102d]">Size & Fit</span>
               <ChevronDown className={`w-6 h-6 text-[#04102d] transition-transform ${openAccordion === 'size' ? 'rotate-180' : ''}`} />
             </button>
             {openAccordion === 'size' && (
-              <div className="px-6 pb-6 pt-2 border-t-2 border-dashed border-gray-200">
+              <div className="px-4 sm:px-6 pb-4 sm:pb-6 pt-2 border-t-2 border-dashed border-gray-200">
                 <div className="pt-4">
                   <div className="mb-8">
                     <p className="font-bold text-[#0bae95] mb-2">Fit Type</p>

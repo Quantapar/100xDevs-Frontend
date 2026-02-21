@@ -16,9 +16,9 @@ export function CohortsSection() {
   };
 
   return (
-    <section id="cohorts" className="bg-[#04102d] border-t-2 border-[#04102d] py-24 pb-32" onClick={() => openDropdown !== null && setOpenDropdown(null)}>
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl lg:text-5xl font-black text-white mb-12">Featured Cohorts</h2>
+    <section id="cohorts" className="bg-[#04102d] border-t-2 border-[#04102d] py-16 pb-20 sm:py-24 sm:pb-32" onClick={() => openDropdown !== null && setOpenDropdown(null)}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-8 sm:mb-12">Featured Cohorts</h2>
 
         {(() => {
            const featuredIdx = 0;
@@ -28,7 +28,7 @@ export function CohortsSection() {
            const oldPrice = formatPrice(featuredCourse.oldPriceInr, curr);
 
            return (
-             <div className={`bg-white border-2 border-[#04102d] rounded-[24px] p-4 lg:p-6 flex flex-col lg:flex-row lg:items-center shadow-[8px_8px_0_#0bae95] hover:-translate-y-2 hover:shadow-[12px_12px_0_#0bae95] transition-all duration-300 mb-12 relative ${openDropdown === featuredIdx ? 'z-50' : 'z-10'}`}>
+             <div className={`bg-white border-2 border-[#04102d] rounded-[24px] p-4 lg:p-6 flex flex-col lg:flex-row lg:items-center shadow-[8px_8px_0_#0bae95] hover:-translate-y-2 hover:shadow-[12px_12px_0_#0bae95] transition-all duration-300 mb-8 sm:mb-12 relative ${openDropdown === featuredIdx ? 'z-50' : 'z-10'}`}>
                 
                 <div className="w-full lg:w-[48%] lg:flex-shrink-0 aspect-[16/9] bg-gray-100 rounded-[16px] border-2 border-[#04102d] overflow-hidden mb-6 lg:mb-0 lg:mr-8 relative group cursor-pointer">
                    <img src={featuredCourse.imgUrl} alt={featuredCourse.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-100"/>
@@ -40,15 +40,15 @@ export function CohortsSection() {
                       <span className="bg-[#0bae95] text-white px-3 py-1 rounded-full text-xs font-black border-2 border-[#04102d] uppercase tracking-wide">Most Popular</span>
                    </div>
                    
-                   <h3 className="text-3xl lg:text-4xl font-black text-[#04102d] mb-4 leading-tight pr-4">{featuredCourse.title}</h3>
-                   <p className="text-[#04102d]/80 font-bold text-[17px] lg:text-[18px] mb-6 line-clamp-3">
+                   <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#04102d] mb-3 sm:mb-4 leading-tight pr-4">{featuredCourse.title}</h3>
+                   <p className="text-[#04102d]/80 font-bold text-base sm:text-[17px] lg:text-[18px] mb-4 sm:mb-6 line-clamp-3">
                       {featuredCourse.desc}
                    </p>
                    
-                   <div className="flex flex-wrap items-center justify-between mt-auto mb-8 gap-4">
+                   <div className="flex flex-wrap items-center justify-between mt-auto mb-6 sm:mb-8 gap-4">
                       <div className="flex items-center gap-3">
-                         <span className="text-[40px] lg:text-[48px] font-black text-[#04102d] leading-none tracking-tight">{price}</span>
-                         <span className="text-xl lg:text-2xl font-bold text-[#04102d]/40 line-through">{oldPrice}</span>
+                         <span className="text-[32px] sm:text-[40px] lg:text-[48px] font-black text-[#04102d] leading-none tracking-tight">{price}</span>
+                         <span className="text-lg sm:text-xl lg:text-2xl font-bold text-[#04102d]/40 line-through">{oldPrice}</span>
                       </div>
                       <span className="bg-[#E5FBB8] border-2 border-[#04102d] px-4 py-2 rounded-full text-[14px] font-black text-[#04102d] shadow-[2px_2px_0_#04102d]">
                          {featuredCourse.discount}
@@ -108,14 +108,14 @@ export function CohortsSection() {
                   </div>
                   
                   <div className="flex flex-col flex-grow px-2 pb-2">
-                     <h3 className="text-2xl font-black text-[#04102d] mb-2 leading-tight pr-4 min-h-[64px] flex items-start">{course.title}</h3>
-                     <p className="text-[#04102d]/70 font-semibold text-[15px] mb-6 line-clamp-2 min-h-[48px]">
+                     <h3 className="text-xl sm:text-2xl font-black text-[#04102d] mb-2 leading-tight pr-4 min-h-[56px] sm:min-h-[64px] flex items-start">{course.title}</h3>
+                     <p className="text-[#04102d]/70 font-semibold text-[14px] sm:text-[15px] mb-4 sm:mb-6 line-clamp-2 min-h-[42px] sm:min-h-[48px]">
                         {course.desc}
                      </p>
                      
-                     <div className="flex items-center justify-between mb-8">
+                     <div className="flex flex-wrap items-center justify-between gap-3 mb-6 sm:mb-8">
                         <div className="flex items-center gap-2">
-                           <span className="text-[32px] font-black text-[#04102d] leading-none tracking-tight">{price}</span>
+                           <span className="text-[28px] sm:text-[32px] font-black text-[#04102d] leading-none tracking-tight">{price}</span>
                            <span className="text-lg font-bold text-[#04102d]/40 line-through">{oldPrice}</span>
                         </div>
                         <span className="bg-[#E5FBB8] border-2 border-[#04102d] px-3 py-1 rounded-full text-[13px] font-black text-[#04102d] shadow-[2px_2px_0_#04102d]">

@@ -12,9 +12,9 @@ export function StorePage() {
 
   return (
     <div className="w-full flex flex-col flex-grow bg-white" onClick={() => setShowDropdown(false)}>
-      <div className="w-full flex justify-center pt-12 pb-12 lg:pt-16 lg:pb-16 bg-white overflow-hidden">
-        <div className="w-full max-w-7xl mx-auto px-6">
-          <div className="relative w-full rounded-[32px] border-4 border-[#04102d] shadow-[8px_8px_0_#0bae95] lg:shadow-[12px_12px_0_#0bae95] overflow-hidden flex items-center min-h-[400px] lg:min-h-[480px] group">
+      <div className="w-full flex justify-center pt-8 pb-8 sm:pt-12 sm:pb-12 lg:pt-16 lg:pb-16 bg-white overflow-hidden">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="relative w-full rounded-[32px] border-4 border-[#04102d] shadow-[8px_8px_0_#0bae95] lg:shadow-[12px_12px_0_#0bae95] overflow-hidden flex items-center min-h-[320px] sm:min-h-[400px] lg:min-h-[480px] group">
             
             <div 
               className="absolute inset-0 bg-cover bg-[center_top_10%] bg-no-repeat transition-transform duration-700 group-hover:scale-105" 
@@ -23,8 +23,8 @@ export function StorePage() {
 
             <div className="absolute inset-0 bg-gradient-to-r from-[#04102d]/95 via-[#04102d]/70 to-transparent z-10 w-full md:w-[70%] transition-colors group-hover:from-[#04102d]/100"></div>
             
-            <div className="relative z-20 w-full flex flex-col items-start px-8 lg:px-16 mt-6">
-              <h1 className="text-4xl lg:text-7xl font-black text-white leading-tight mb-6 drop-shadow-xl tracking-tight">
+            <div className="relative z-20 w-full flex flex-col items-start px-6 sm:px-8 lg:px-16 mt-6">
+              <h1 className="text-3xl sm:text-4xl lg:text-7xl font-black text-white leading-tight mb-4 sm:mb-6 drop-shadow-xl tracking-tight">
                 Wear the <br className="sm:hidden" />
                 <span className="relative inline-block pb-1 sm:ml-4 lg:ml-5">
                   100x Mindset
@@ -42,14 +42,14 @@ export function StorePage() {
       </div>
 
    
-      <div className="max-w-7xl mx-auto px-6 py-16 w-full">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-12">
-          <h2 className="text-3xl lg:text-5xl font-black text-[#04102d]">Our Bestselling Merch</h2>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16 w-full">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-[#04102d]">Our Bestselling Merch</h2>
           
           <div className="relative">
             <div 
               onClick={(e) => { e.stopPropagation(); setShowDropdown(!showDropdown); }}
-              className="px-6 py-3 rounded-xl border-4 border-[#04102d] bg-white shadow-[4px_4px_0_#04102d] hover:shadow-[2px_2px_0_#04102d] hover:translate-x-[2px] hover:translate-y-[2px] transition-all flex items-center gap-4 cursor-pointer font-black text-[#04102d]"
+              className="px-4 sm:px-6 py-3 rounded-xl border-4 border-[#04102d] bg-white shadow-[4px_4px_0_#04102d] hover:shadow-[2px_2px_0_#04102d] hover:translate-x-[2px] hover:translate-y-[2px] transition-all flex items-center justify-between sm:justify-center gap-4 cursor-pointer font-black text-[#04102d]"
             >
               <span>{currency}</span>
               <ChevronDown className={`w-5 h-5 transition-transform ${showDropdown ? 'rotate-180' : ''}`} strokeWidth={3} />

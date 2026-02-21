@@ -69,6 +69,7 @@ export const whyCards = [
 
 export const cohorts = [
   {
+    id: 24,
     title: "100xSchool Combined Bootcamp",
     desc: "Web dev (Every Friday) Devops (Every Friday) Machine Learning and AI (Every Saturday)...",
     priceInr: 5999,
@@ -77,6 +78,7 @@ export const cohorts = [
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_6302172904491252.jpg"
   },
   {
+    id: 25,
     title: "Web Dev + Devops Bootcamp",
     desc: "Complete Typescript + MERN stack, Complete Devops, System design, Projects",
     priceInr: 3999,
@@ -85,6 +87,7 @@ export const cohorts = [
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_0916663009561891.jpg"
   },
   {
+    id: 26,
     title: "Web3 Bootcamp",
     desc: "Complete Solana and Web3 Bootcamp",
     priceInr: 3999,
@@ -93,6 +96,7 @@ export const cohorts = [
     imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_9482626468382281.jpg"
   },
   {
+    id: 27,
     title: "AI Bootcamp 1.0",
     desc: "Classical ML, Attention and its variations, GenAI, Memory and retrieval, Advanced topics",
     priceInr: 3999,
