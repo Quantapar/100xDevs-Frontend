@@ -16,7 +16,7 @@ export function Navbar({ onOpenAuth, isLoggedIn = false, userName, onLogout }: N
   const navigate = useNavigate();
   const location = useLocation();
 
-  const isProtectedRoute = location.pathname.startsWith('/profile') || location.pathname.startsWith('/purchases');
+  const isProtectedRoute = location.pathname.startsWith('/profile');
   const effectivelyLoggedIn = isLoggedIn || isProtectedRoute;
 
   useEffect(() => {
@@ -59,9 +59,7 @@ export function Navbar({ onOpenAuth, isLoggedIn = false, userName, onLogout }: N
                   <Link to="/profile" onClick={() => setIsDropdownOpen(false)} className="text-left px-5 py-2.5 text-[#04102d] font-bold text-[15px] hover:bg-gray-50 transition-colors w-full cursor-pointer">
                     My Profile
                   </Link>
-                  <Link to="/purchases" onClick={() => setIsDropdownOpen(false)} className="text-left px-5 py-2.5 text-[#04102d] font-bold text-[15px] hover:bg-gray-50 transition-colors w-full cursor-pointer">
-                    Purchases
-                  </Link>
+
                   <div className="w-full h-[1px] bg-gray-100 my-1 font-bold"></div>
                   <button onClick={() => { setIsDropdownOpen(false); onLogout?.(); navigate('/'); }} className="text-left px-5 py-2.5 text-[#e13a45] font-bold text-[15px] hover:bg-red-50 transition-colors w-full cursor-pointer">
                     Logout
@@ -96,9 +94,7 @@ export function Navbar({ onOpenAuth, isLoggedIn = false, userName, onLogout }: N
                   <Link to="/profile" onClick={() => setIsDropdownOpen(false)} className="text-left px-4 py-2 text-[#04102d] font-bold text-[14px] hover:bg-gray-50 transition-colors w-full cursor-pointer">
                     My Profile
                   </Link>
-                  <Link to="/purchases" onClick={() => setIsDropdownOpen(false)} className="text-left px-4 py-2 text-[#04102d] font-bold text-[14px] hover:bg-gray-50 transition-colors w-full cursor-pointer">
-                    Purchases
-                  </Link>
+
                   <div className="w-full h-[1px] bg-gray-100 my-1 font-bold"></div>
                   <button onClick={() => { setIsDropdownOpen(false); onLogout?.(); navigate('/'); }} className="text-left px-4 py-2 text-[#e13a45] font-bold text-[14px] hover:bg-red-50 transition-colors w-full cursor-pointer">
                     Logout
