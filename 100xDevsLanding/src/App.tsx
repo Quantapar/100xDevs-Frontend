@@ -22,6 +22,7 @@ import { ProductPage } from './pages/ProductPage';
 import { CourseDetailsPage } from './pages/CourseDetailsPage';
 import { ProfilePage } from './pages/ProfilePage';
 import { PurchasesPage } from './pages/PurchasesPage';
+import { CourseContentPage } from './pages/CourseContentPage';
 
 function LandingPage() {
   return (
@@ -70,6 +71,7 @@ function App() {
               <Route path="/store/:id" element={<ProductPage />} />
               <Route path="/courses" element={<CoursesPage />} />
               <Route path="/new-courses/:id" element={<CourseDetailsPage />} />
+              <Route path="/new-courses/:id/content" element={<CourseContentPage />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/purchases" element={<PurchasesPage />} />
               <Route path="/index.html" element={<Navigate to="/" replace />} />

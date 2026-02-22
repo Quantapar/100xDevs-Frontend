@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -14,6 +14,10 @@ export function Navbar({ onOpenAuth, isLoggedIn = false, userName, onLogout }: N
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isProtectedRoute = location.pathname.startsWith('/profile') || location.pathname.startsWith('/purchases');
+  const effectivelyLoggedIn = isLoggedIn || isProtectedRoute;
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -41,13 +45,13 @@ export function Navbar({ onOpenAuth, isLoggedIn = false, userName, onLogout }: N
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
-          {isLoggedIn ? (
+          {effectivelyLoggedIn ? (
             <div className="relative" ref={dropdownRef}>
               <button 
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className="w-12 h-12 rounded-full bg-[#0b043d] text-white flex items-center justify-center font-bold text-xl cursor-pointer hover:bg-[#1a0f5e] transition-colors shadow-[2px_2px_0_#0bae95]"
               >
-                {userName ? userName.charAt(0).toUpperCase() : 'U'}
+                {userName ? userName.charAt(0).toUpperCase() : 'M'}
               </button>
               
               {isDropdownOpen && (
@@ -78,13 +82,13 @@ export function Navbar({ onOpenAuth, isLoggedIn = false, userName, onLogout }: N
         </div>
 
         <div className="lg:hidden flex items-center gap-3">
-          {isLoggedIn ? (
+          {effectivelyLoggedIn ? (
             <div className="relative">
               <button 
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className="w-10 h-10 rounded-full bg-[#0b043d] text-white flex items-center justify-center font-bold text-lg cursor-pointer hover:bg-[#1a0f5e] transition-colors shadow-[2px_2px_0_#0bae95]"
               >
-                {userName ? userName.charAt(0).toUpperCase() : 'U'}
+                {userName ? userName.charAt(0).toUpperCase() : 'M'}
               </button>
               
               {isDropdownOpen && (
@@ -129,7 +133,7 @@ export function Navbar({ onOpenAuth, isLoggedIn = false, userName, onLogout }: N
             <span>Store</span>
           </Link>
           
-          {!isLoggedIn && (
+          {!effectivelyLoggedIn && (
             <button 
               onClick={() => { setIsOpen(false); onOpenAuth('signup'); }} 
               className="mt-6 w-full py-3 rounded-xl font-black border-4 border-[#04102d] bg-[#e2eafb] text-[#04102d] hover:bg-[#d1def8] shadow-[4px_4px_0_#04102d]"
