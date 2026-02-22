@@ -20,6 +20,8 @@ import { StorePage } from './pages/StorePage';
 import { CoursesPage } from './pages/CoursesPage';
 import { ProductPage } from './pages/ProductPage';
 import { CourseDetailsPage } from './pages/CourseDetailsPage';
+import { ProfilePage } from './pages/ProfilePage';
+import { PurchasesPage } from './pages/PurchasesPage';
 
 function LandingPage() {
   return (
@@ -39,13 +41,24 @@ function LandingPage() {
 
 function App() {
   const [authModalConfig, setAuthModalConfig] = useState<{isOpen: boolean, mode: 'login' | 'signup'}>({isOpen: false, mode: 'login'});
+  const [userName, setUserName] = useState<string | null>(null);
 
   return (
     <BrowserRouter>
       <CurrencyProvider>
         <div className="min-h-screen flex flex-col text-[#04102d] font-sans overflow-x-hidden relative">
-          <AuthModal isOpen={authModalConfig.isOpen} mode={authModalConfig.mode} onClose={() => setAuthModalConfig({...authModalConfig, isOpen: false})} />
-          <Navbar onOpenAuth={(mode) => setAuthModalConfig({isOpen: true, mode})} />
+          <AuthModal 
+            isOpen={authModalConfig.isOpen} 
+            mode={authModalConfig.mode} 
+            onClose={() => setAuthModalConfig({...authModalConfig, isOpen: false})} 
+            onLogin={(name) => setUserName(name)}
+          />
+          <Navbar 
+            onOpenAuth={(mode) => setAuthModalConfig({isOpen: true, mode})} 
+            isLoggedIn={!!userName}
+            userName={userName}
+            onLogout={() => setUserName(null)}
+          />
           
           <main className="flex-grow">
             <Routes>
@@ -57,6 +70,8 @@ function App() {
               <Route path="/store/:id" element={<ProductPage />} />
               <Route path="/courses" element={<CoursesPage />} />
               <Route path="/new-courses/:id" element={<CourseDetailsPage />} />
+              <Route path="/profile" element={<ProfilePage />} />
+              <Route path="/purchases" element={<PurchasesPage />} />
             </Routes>
           </main>
 
