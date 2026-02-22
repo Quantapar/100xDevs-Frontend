@@ -17,7 +17,7 @@ export function ProfilePage() {
   const [profileData, setProfileData] = useState({
     name: "Manu Sharma",
     phone: "7078735629",
-    email: "Manusharma2462@gmail.com"
+    email: "Manusharma2462@gmail.com",
   });
 
   return (
@@ -41,21 +41,29 @@ export function ProfilePage() {
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-6">
               <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
                 <div className="w-24 h-24 bg-[#E5FBB8] border-2 border-[#04102d] shadow-[4px_4px_0_#04102d] rounded-full flex items-center justify-center shrink-0">
-                  <User className="w-10 h-10 text-[#04102d]" strokeWidth={2.5} />
+                  <User
+                    className="w-10 h-10 text-[#04102d]"
+                    strokeWidth={2.5}
+                  />
                 </div>
 
                 <div className="flex flex-col gap-1.5">
                   <h3 className="text-2xl font-black text-[#04102d]">
                     {profileData.name}
                   </h3>
-                  <p className="text-gray-600 text-sm font-bold">{profileData.phone}</p>
+                  <p className="text-gray-600 text-sm font-bold">
+                    {profileData.phone}
+                  </p>
                   <p className="text-gray-600 text-sm font-bold">
                     {profileData.email}
                   </p>
                 </div>
               </div>
 
-              <button onClick={() => setIsEditingProfile(true)} className="cursor-pointer flex items-center justify-center gap-2.5 bg-[#04102d] text-white px-6 py-3 rounded-[14px] font-black border-2 border-[#04102d] shadow-[4px_4px_0_#0bae95] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#0bae95] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px] whitespace-nowrap w-full md:w-auto">
+              <button
+                onClick={() => setIsEditingProfile(true)}
+                className="cursor-pointer flex items-center justify-center gap-2.5 bg-[#04102d] text-white px-6 py-3 rounded-[14px] font-black border-2 border-[#04102d] shadow-[4px_4px_0_#0bae95] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#0bae95] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px] whitespace-nowrap w-full md:w-auto"
+              >
                 <Edit2 className="w-5 h-5" strokeWidth={2.5} />
                 Edit Profile
               </button>
@@ -70,26 +78,62 @@ export function ProfilePage() {
 
               <div className="flex flex-col gap-5 w-full max-w-2xl">
                 <div className="flex flex-col gap-2">
-                   <label className="text-sm font-black text-[#04102d]">Full Name</label>
-                   <input type="text" value={profileData.name} onChange={e => setProfileData({...profileData, name: e.target.value})} className="w-full border-2 border-[#04102d] rounded-xl px-4 py-3 font-bold text-[#04102d] bg-white focus:shadow-[4px_4px_0_#0bae95] outline-none transition-all placeholder:text-gray-400" placeholder="Enter your full name" />
+                  <label className="text-sm font-black text-[#04102d]">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    value={profileData.name}
+                    onChange={(e) =>
+                      setProfileData({ ...profileData, name: e.target.value })
+                    }
+                    className="w-full border-2 border-[#04102d] rounded-xl px-4 py-3 font-bold text-[#04102d] bg-white focus:shadow-[4px_4px_0_#0bae95] outline-none transition-all placeholder:text-gray-400"
+                    placeholder="Enter your full name"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
-                   <label className="text-sm font-black text-[#04102d]">Phone Number</label>
-                   <input type="text" value={profileData.phone} onChange={e => setProfileData({...profileData, phone: e.target.value})} className="w-full border-2 border-[#04102d] rounded-xl px-4 py-3 font-bold text-[#04102d] bg-white focus:shadow-[4px_4px_0_#0bae95] outline-none transition-all placeholder:text-gray-400" placeholder="Enter your phone number" />
+                  <label className="text-sm font-black text-[#04102d]">
+                    Phone Number
+                  </label>
+                  <input
+                    type="text"
+                    value={profileData.phone}
+                    onChange={(e) =>
+                      setProfileData({ ...profileData, phone: e.target.value })
+                    }
+                    className="w-full border-2 border-[#04102d] rounded-xl px-4 py-3 font-bold text-[#04102d] bg-white focus:shadow-[4px_4px_0_#0bae95] outline-none transition-all placeholder:text-gray-400"
+                    placeholder="Enter your phone number"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
-                   <label className="text-sm font-black text-[#04102d]">Email Address</label>
-                   <input type="email" value={profileData.email} onChange={e => setProfileData({...profileData, email: e.target.value})} className="w-full border-2 border-[#04102d] rounded-xl px-4 py-3 font-bold text-[#04102d] bg-white focus:shadow-[4px_4px_0_#0bae95] outline-none transition-all placeholder:text-gray-400" placeholder="Enter your email address" />
+                  <label className="text-sm font-black text-[#04102d]">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    value={profileData.email}
+                    onChange={(e) =>
+                      setProfileData({ ...profileData, email: e.target.value })
+                    }
+                    className="w-full border-2 border-[#04102d] rounded-xl px-4 py-3 font-bold text-[#04102d] bg-white focus:shadow-[4px_4px_0_#0bae95] outline-none transition-all placeholder:text-gray-400"
+                    placeholder="Enter your email address"
+                  />
                 </div>
               </div>
 
               <div className="flex items-center gap-4 mt-4">
-                 <button onClick={() => setIsEditingProfile(false)} className="cursor-pointer bg-[#04102d] text-white px-8 py-3 rounded-[12px] font-black border-2 border-[#04102d] shadow-[4px_4px_0_#0bae95] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#0bae95] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px]">
-                   Save Changes
-                 </button>
-                 <button onClick={() => setIsEditingProfile(false)} className="cursor-pointer bg-white text-[#04102d] px-8 py-3 rounded-[12px] font-black border-2 border-[#04102d] shadow-[4px_4px_0_#04102d] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#04102d] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px]">
-                   Cancel
-                 </button>
+                <button
+                  onClick={() => setIsEditingProfile(false)}
+                  className="cursor-pointer bg-[#04102d] text-white px-8 py-3 rounded-[12px] font-black border-2 border-[#04102d] shadow-[4px_4px_0_#0bae95] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#0bae95] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px]"
+                >
+                  Save Changes
+                </button>
+                <button
+                  onClick={() => setIsEditingProfile(false)}
+                  className="cursor-pointer bg-white text-[#04102d] px-8 py-3 rounded-[12px] font-black border-2 border-[#04102d] shadow-[4px_4px_0_#04102d] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#04102d] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px]"
+                >
+                  Cancel
+                </button>
               </div>
             </div>
           )}
@@ -117,7 +161,10 @@ export function ProfilePage() {
                 </div>
               </div>
 
-              <button onClick={() => setIsEditingSecurity(true)} className="cursor-pointer flex items-center justify-center bg-white text-[#04102d] px-6 py-3 rounded-[14px] font-black border-2 border-[#04102d] shadow-[4px_4px_0_#04102d] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#04102d] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px] whitespace-nowrap w-full md:w-auto">
+              <button
+                onClick={() => setIsEditingSecurity(true)}
+                className="cursor-pointer flex items-center justify-center bg-white text-[#04102d] px-6 py-3 rounded-[14px] font-black border-2 border-[#04102d] shadow-[4px_4px_0_#04102d] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#04102d] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px] whitespace-nowrap w-full md:w-auto"
+              >
                 Change Password
               </button>
             </div>
@@ -130,31 +177,59 @@ export function ProfilePage() {
               </div>
 
               <div className="flex flex-col gap-5 w-full max-w-2xl">
-                 <div className="flex flex-col gap-2">
-                   <label className="text-sm font-black text-[#04102d]">Current Password</label>
-                   <input type="password" placeholder="Enter current password" className="w-full border-2 border-[#04102d] rounded-xl px-4 py-3 font-bold text-[#04102d] bg-white focus:shadow-[4px_4px_0_#0bae95] outline-none transition-all placeholder:text-gray-400" />
-                 </div>
-                 <div className="flex flex-col gap-2">
-                   <label className="text-sm font-black text-[#04102d]">New Password</label>
-                   <input type="password" placeholder="Enter new password" className="w-full border-2 border-[#04102d] rounded-xl px-4 py-3 font-bold text-[#04102d] bg-white focus:shadow-[4px_4px_0_#0bae95] outline-none transition-all placeholder:text-gray-400" />
-                 </div>
-                 <div className="flex flex-col gap-2">
-                   <label className="text-sm font-black text-[#04102d]">Confirm new Password</label>
-                   <input type="password" placeholder="Confirm new password" className="w-full border-2 border-[#04102d] rounded-xl px-4 py-3 font-bold text-[#04102d] bg-white focus:shadow-[4px_4px_0_#0bae95] outline-none transition-all placeholder:text-gray-400" />
-                 </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm font-black text-[#04102d]">
+                    Current Password
+                  </label>
+                  <input
+                    type="password"
+                    placeholder="Enter current password"
+                    className="w-full border-2 border-[#04102d] rounded-xl px-4 py-3 font-bold text-[#04102d] bg-white focus:shadow-[4px_4px_0_#0bae95] outline-none transition-all placeholder:text-gray-400"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm font-black text-[#04102d]">
+                    New Password
+                  </label>
+                  <input
+                    type="password"
+                    placeholder="Enter new password"
+                    className="w-full border-2 border-[#04102d] rounded-xl px-4 py-3 font-bold text-[#04102d] bg-white focus:shadow-[4px_4px_0_#0bae95] outline-none transition-all placeholder:text-gray-400"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm font-black text-[#04102d]">
+                    Confirm new Password
+                  </label>
+                  <input
+                    type="password"
+                    placeholder="Confirm new password"
+                    className="w-full border-2 border-[#04102d] rounded-xl px-4 py-3 font-bold text-[#04102d] bg-white focus:shadow-[4px_4px_0_#0bae95] outline-none transition-all placeholder:text-gray-400"
+                  />
+                </div>
               </div>
 
               <div className="flex items-center gap-4 mt-2">
-                 <button onClick={() => setIsEditingSecurity(false)} className="cursor-pointer bg-[#04102d] text-white px-8 py-3 rounded-[12px] font-black border-2 border-[#04102d] shadow-[4px_4px_0_#0bae95] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#0bae95] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px]">
-                   Change Password
-                 </button>
-                 <button onClick={() => setIsEditingSecurity(false)} className="cursor-pointer bg-white text-[#04102d] px-8 py-3 rounded-[12px] font-black border-2 border-[#04102d] shadow-[4px_4px_0_#04102d] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#04102d] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px]">
-                   Cancel
-                 </button>
+                <button
+                  onClick={() => setIsEditingSecurity(false)}
+                  className="cursor-pointer bg-[#04102d] text-white px-8 py-3 rounded-[12px] font-black border-2 border-[#04102d] shadow-[4px_4px_0_#0bae95] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#0bae95] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px]"
+                >
+                  Change Password
+                </button>
+                <button
+                  onClick={() => setIsEditingSecurity(false)}
+                  className="cursor-pointer bg-white text-[#04102d] px-8 py-3 rounded-[12px] font-black border-2 border-[#04102d] shadow-[4px_4px_0_#04102d] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#04102d] transition-all active:shadow-none active:translate-x-[4px] active:translate-y-[4px]"
+                >
+                  Cancel
+                </button>
               </div>
 
               <div className="mt-4 p-5 bg-[#f8fafc] border-2 border-[#04102d] rounded-[16px]">
-                 <p className="text-sm font-bold text-[#04102d]"><span className="font-black">Password requirements:</span> Use at least 8 characters with a mix of letters, numbers, and symbols.</p>
+                <p className="text-sm font-bold text-[#04102d]">
+                  <span className="font-black">Password requirements:</span> Use
+                  at least 8 characters with a mix of letters, numbers, and
+                  symbols.
+                </p>
               </div>
             </div>
           )}

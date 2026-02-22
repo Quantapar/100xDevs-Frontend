@@ -64,7 +64,7 @@ export const whyCards = [
     iconColor: "text-[#04102d]",
     shadow: "shadow-[8px_8px_0_#0bae95]",
     iconShadow: "shadow-[3px_3px_0_#0bae95]",
-  }
+  },
 ];
 
 export const cohorts = [
@@ -75,7 +75,8 @@ export const cohorts = [
     priceInr: 5999,
     oldPriceInr: 8999,
     discount: "34% off",
-    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_6302172904491252.jpg"
+    imgUrl:
+      "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_6302172904491252.jpg",
   },
   {
     id: 25,
@@ -84,7 +85,8 @@ export const cohorts = [
     priceInr: 3999,
     oldPriceInr: 5999,
     discount: "34% off",
-    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_0916663009561891.jpg"
+    imgUrl:
+      "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_0916663009561891.jpg",
   },
   {
     id: 26,
@@ -93,7 +95,8 @@ export const cohorts = [
     priceInr: 3999,
     oldPriceInr: 5999,
     discount: "34% off",
-    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_9482626468382281.jpg"
+    imgUrl:
+      "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_9482626468382281.jpg",
   },
   {
     id: 27,
@@ -102,8 +105,9 @@ export const cohorts = [
     priceInr: 3999,
     oldPriceInr: 5999,
     discount: "34% off",
-    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_12723468219857426.jpg"
-  }
+    imgUrl:
+      "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_12723468219857426.jpg",
+  },
 ];
 
 export const oldPrograms = [
@@ -114,7 +118,8 @@ export const oldPrograms = [
     priceInr: 5989,
     oldPriceInr: 8499,
     discount: "30% off",
-    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_9746534586545286.jpg"
+    imgUrl:
+      "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_9746534586545286.jpg",
   },
   {
     id: 102,
@@ -123,7 +128,8 @@ export const oldPrograms = [
     priceInr: 4989,
     oldPriceInr: 5999,
     discount: "17% off",
-    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_3591256197462771.jpeg"
+    imgUrl:
+      "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_3591256197462771.jpeg",
   },
   {
     id: 103,
@@ -132,7 +138,8 @@ export const oldPrograms = [
     priceInr: 4989,
     oldPriceInr: 5999,
     discount: "17% off",
-    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_14005359899502445.jpeg"
+    imgUrl:
+      "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_14005359899502445.jpeg",
   },
   {
     id: 104,
@@ -141,7 +148,8 @@ export const oldPrograms = [
     priceInr: 2989,
     oldPriceInr: 3999,
     discount: "26% off",
-    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_6191871226534383.jpeg"
+    imgUrl:
+      "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_6191871226534383.jpeg",
   },
   {
     id: 105,
@@ -150,7 +158,8 @@ export const oldPrograms = [
     priceInr: 2989,
     oldPriceInr: 3999,
     discount: "26% off",
-    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_5294406977112471.jpeg"
+    imgUrl:
+      "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_5294406977112471.jpeg",
   },
   {
     id: 106,
@@ -159,7 +168,8 @@ export const oldPrograms = [
     priceInr: 5589,
     oldPriceInr: 7999,
     discount: "31% off",
-    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_7921470593092867.jpg"
+    imgUrl:
+      "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_7921470593092867.jpg",
   },
   {
     id: 107,
@@ -168,7 +178,8 @@ export const oldPrograms = [
     priceInr: 3489,
     oldPriceInr: 5999,
     discount: "41% off",
-    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_6241552223044127.jpg"
+    imgUrl:
+      "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_6241552223044127.jpg",
   },
   {
     id: 108,
@@ -177,7 +188,8 @@ export const oldPrograms = [
     priceInr: 3989,
     oldPriceInr: 5999,
     discount: "34% off",
-    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_035738282034753155.jpg"
+    imgUrl:
+      "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_035738282034753155.jpg",
   },
   {
     id: 109,
@@ -186,83 +198,97 @@ export const oldPrograms = [
     priceInr: 3989,
     oldPriceInr: 4999,
     discount: "21% off",
-    imgUrl: "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_7283497422556585.jpg"
-  }
+    imgUrl:
+      "https://appx-content-v2.classx.co.in/paid_course3/2026-01-31-0_7283497422556585.jpg",
+  },
 ];
 
 export const podcasts = [
   {
     id: "dRXq81Om2a4",
-    title: "How a 21-Year-Old Got an ₹80 LPA Offer (Before Degree!)"
+    title: "How a 21-Year-Old Got an ₹80 LPA Offer (Before Degree!)",
   },
   {
     id: "PZNgcH2Jtac",
-    title: "$25000 Bug Bounty, $100k Offer as a Solana Engineer"
+    title: "$25000 Bug Bounty, $100k Offer as a Solana Engineer",
   },
   {
     id: "TbbCJQ4Vbko",
-    title: "How He Cracked A 40Lakhs Remote Coding Job (Complete Story)"
-  }
+    title: "How He Cracked A 40Lakhs Remote Coding Job (Complete Story)",
+  },
 ];
 
 export const faqs = [
   {
     question: "What makes 100xDevs different from other coding platforms?",
-    answer: "No compromises. With 100xDevs, you don't have to choose between different tutors and random tutorials. Get the power of building production-ready applications."
+    answer:
+      "No compromises. With 100xDevs, you don't have to choose between different tutors and random tutorials. Get the power of building production-ready applications.",
   },
   {
     question: "Do I need prior coding experience to join?",
-    answer: "No prior experience is required. Our courses are designed to take you from beginner to advanced levels with structured learning paths."
+    answer:
+      "No prior experience is required. Our courses are designed to take you from beginner to advanced levels with structured learning paths.",
   },
   {
     question: "What kind of support can I expect?",
-    answer: "You'll get 24/7 community support through our active Discord, weekly study groups, peer code reviews, and direct mentorship opportunities."
+    answer:
+      "You'll get 24/7 community support through our active Discord, weekly study groups, peer code reviews, and direct mentorship opportunities.",
   },
   {
     question: "Are the courses self-paced or scheduled?",
-    answer: "We offer both self-paced learning materials and scheduled live sessions, giving you the flexibility to learn at your own pace while staying connected with the community."
+    answer:
+      "We offer both self-paced learning materials and scheduled live sessions, giving you the flexibility to learn at your own pace while staying connected with the community.",
   },
   {
     question: "Will I get a certificate after completion?",
-    answer: "Yes, you'll receive a certificate of completion for each course you finish, along with portfolio projects that demonstrate your skills to potential employers."
-  }
+    answer:
+      "Yes, you'll receive a certificate of completion for each course you finish, along with portfolio projects that demonstrate your skills to potential employers.",
+  },
 ];
 
 export const merchItems = [
   {
     id: 1,
-    title: '100x Cool T-Shirt for Everyday Flex - White',
+    title: "100x Cool T-Shirt for Everyday Flex - White",
     priceInr: 999,
-    bgColor: 'bg-[#e2eafb]', 
-    imagePath: 'https://appx-content-v2.classx.co.in/subject/2026-01-20-0_8779263070024793.jpg',
-    description: 'Stylish White T-Shirt with Bold Black & Blue Text - 100x Cool Design',
-    deliveryTime: '20 days'
+    bgColor: "bg-[#e2eafb]",
+    imagePath:
+      "https://appx-content-v2.classx.co.in/subject/2026-01-20-0_8779263070024793.jpg",
+    description:
+      "Stylish White T-Shirt with Bold Black & Blue Text - 100x Cool Design",
+    deliveryTime: "20 days",
   },
   {
     id: 2,
-    title: '100x Cool T-Shirt for Everyday Flex - Black',
+    title: "100x Cool T-Shirt for Everyday Flex - Black",
     priceInr: 999,
-    bgColor: 'bg-[#04102d]/10',
-    imagePath: 'https://appx-content-v2.classx.co.in/subject/2026-01-20-0_3411687194845816.jpg',
-    description: 'Stylish Black T-Shirt with Bold White & Blue Text - 100x Cool Design',
-    deliveryTime: '20 days'
+    bgColor: "bg-[#04102d]/10",
+    imagePath:
+      "https://appx-content-v2.classx.co.in/subject/2026-01-20-0_3411687194845816.jpg",
+    description:
+      "Stylish Black T-Shirt with Bold White & Blue Text - 100x Cool Design",
+    deliveryTime: "20 days",
   },
   {
     id: 3,
-    title: '100x Cool T-Shirt for Everyday Flex - Cream',
+    title: "100x Cool T-Shirt for Everyday Flex - Cream",
     priceInr: 999,
-    bgColor: 'bg-[#f1ecd9]',
-    imagePath: 'https://appx-content-v2.classx.co.in/subject/2026-01-21-0_3317186839576379.jpeg',
-    description: 'Stylish Cream T-Shirt with Bold Black & Blue Text - 100x Cool Design',
-    deliveryTime: '20 days'
+    bgColor: "bg-[#f1ecd9]",
+    imagePath:
+      "https://appx-content-v2.classx.co.in/subject/2026-01-21-0_3317186839576379.jpeg",
+    description:
+      "Stylish Cream T-Shirt with Bold Black & Blue Text - 100x Cool Design",
+    deliveryTime: "20 days",
   },
   {
     id: 4,
-    title: '100x Cool T-Shirt for Everyday Flex - Light Grey',
+    title: "100x Cool T-Shirt for Everyday Flex - Light Grey",
     priceInr: 999,
-    bgColor: 'bg-[#cbd5e1]',
-    imagePath: 'https://appx-content-v2.classx.co.in/subject/2026-01-23-0_44568583421620445.jpeg',
-    description: 'Stylish Light Grey T-Shirt with Bold Black & Blue Text - 100x Cool Design',
-    deliveryTime: '20 days'
-  }
+    bgColor: "bg-[#cbd5e1]",
+    imagePath:
+      "https://appx-content-v2.classx.co.in/subject/2026-01-23-0_44568583421620445.jpeg",
+    description:
+      "Stylish Light Grey T-Shirt with Bold Black & Blue Text - 100x Cool Design",
+    deliveryTime: "20 days",
+  },
 ];

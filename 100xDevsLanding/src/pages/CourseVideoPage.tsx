@@ -65,17 +65,12 @@ export function CourseVideoPage() {
 
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
           <div className="xl:col-span-8 flex flex-col gap-6">
-            <div className="w-full aspect-video bg-[#04102d] border-4 border-[#04102d] rounded-[24px] shadow-[8px_8px_0_#0bae95] overflow-hidden relative group cursor-pointer flex items-center justify-center">
-              <div className="absolute inset-0 flex items-center justify-center bg-black/40 z-10 group-hover:bg-black/20 transition-all">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#0bae95] border-[3px] border-[#04102d] flex items-center justify-center pl-1 shadow-[4px_4px_0_#04102d] group-hover:scale-110 transition-transform">
-                  <Play className="w-8 h-8 md:w-10 md:h-10 text-white fill-white" />
-                </div>
-              </div>
-
-              <img
-                src="https://wallup.net/wp-content/uploads/2018/09/25/119566-code-programming-computer.jpg"
-                alt="Video Placeholder"
-                className="w-full h-full object-cover opacity-80"
+            <div className="w-full aspect-video bg-[#04102d] border-4 border-[#04102d] rounded-[24px] shadow-[8px_8px_0_#0bae95] overflow-hidden relative flex items-center justify-center">
+              <video
+                src="https://www.w3schools.com/html/mov_bbb.mp4"
+                controls
+                className="w-full h-full object-cover outline-none"
+                preload="metadata"
               />
             </div>
 

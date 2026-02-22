@@ -9,11 +9,7 @@ import {
   ChevronDown,
   CheckCircle2,
 } from "lucide-react";
-import {
-  useNavigate,
-  useParams,
-  useSearchParams,
-} from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { cohorts, oldPrograms } from "../data";
 
 const allSyllabusData = {
