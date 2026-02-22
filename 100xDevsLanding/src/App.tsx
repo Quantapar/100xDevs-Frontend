@@ -12,7 +12,7 @@ import { CommunitySection } from './components/sections/CommunitySection';
 import { FaqSection } from './components/sections/FaqSection';
 import { ContactSection } from './components/sections/ContactSection';
 import { CurrencyProvider } from './context/CurrencyContext';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { TermsPage } from './pages/TermsPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { RefundPage } from './pages/RefundPage';
@@ -72,6 +72,8 @@ function App() {
               <Route path="/new-courses/:id" element={<CourseDetailsPage />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/purchases" element={<PurchasesPage />} />
+              <Route path="/index.html" element={<Navigate to="/" replace />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>
 
