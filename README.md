@@ -1,15 +1,10 @@
-.<div align="center">
+<div align="center">
 
-# 🚀 100xDevs — Frontend Remake
+# 100xDevs — Frontend Remake
 
 ### A pixel-perfect, production-grade frontend clone of [100xDevs.com](https://100xdevs.com)
 
-[![Live Demo](https://img.shields.io/badge/▶_Live_Demo-100xdevslanding.vercel.app-0bae95?style=for-the-badge&logo=vercel&logoColor=white)](https://100xdevslanding.vercel.app/)
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://100xdevslanding.vercel.app/)
+![100xDevsFrontend.png](100xDevsFrontend.png)
 
 <br/>
 
@@ -22,22 +17,22 @@
 
 ---
 
-## ✨ Highlights
+## Highlights
 
 | | Feature | Description |
 |---|---|---|
-| 🎨 | **Neo-Brutalist Design** | Bold borders, hard shadows, vibrant accent colors (#0bae95, #04102d) — a distinctive, modern aesthetic |
-| 📱 | **Fully Responsive** | Pixel-perfect across mobile, tablet, and desktop breakpoints |
-| ⚡ | **Lightning Fast** | Built on Vite 7 with optimized builds, instant HMR, and code splitting |
-| 🧭 | **Multi-Page SPA** | Client-side routing with React Router v7 across 10+ unique pages |
-| 🔐 | **Auth System** | Login/Signup modal with form validation, avatar generation, and session state |
-| 💰 | **Currency Toggle** | Dynamic INR ↔ USD pricing with context-based state management |
-| 🎬 | **Smooth Animations** | Hover effects, scroll transitions, and micro-interactions throughout |
-| 🖼️ | **OG Meta Tags** | Full Open Graph and Twitter Card support for rich social sharing |
+| | **Neo-Brutalist Design** | Bold borders, hard shadows, vibrant accent colors (#0bae95, #04102d) — a distinctive, modern aesthetic |
+| | **Fully Responsive** | Pixel-perfect across mobile, tablet, and desktop breakpoints |
+| | **Lightning Fast** | Built on Vite 7 with optimized builds, instant HMR, and code splitting |
+| | **Multi-Page SPA** | Client-side routing with React Router v7 across 10+ unique pages |
+| | **Auth System** | Login/Signup modal with form validation, avatar generation, and session state |
+| | **Currency Toggle** | Dynamic INR / USD pricing with context-based state management |
+| | **Smooth Animations** | Hover effects, scroll transitions, and micro-interactions throughout |
+| | **OG Meta Tags** | Full Open Graph and Twitter Card support for rich social sharing |
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 <div align="center">
 
@@ -56,7 +51,7 @@
 
 ---
 
-## 📄 Pages & Routes
+## Pages & Routes
 
 | Route | Page | Description |
 |---|---|---|
@@ -74,7 +69,7 @@
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 100xDevsFrontend/
@@ -107,7 +102,7 @@
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -143,7 +138,7 @@ npm run build
 
 ---
 
-## 🎨 Design Philosophy
+## Design Philosophy
 
 This project follows a **neo-brutalist design language** characterized by:
 
@@ -156,7 +151,7 @@ This project follows a **neo-brutalist design language** characterized by:
 
 ---
 
-## 📌 Key Implementation Details
+## Key Implementation Details
 
 - **State Management** — React Context API for global currency state; local `useState` for component-level state
 - **Routing** — React Router v7 with a catch-all redirect to `/` for graceful 404 handling
@@ -166,16 +161,16 @@ This project follows a **neo-brutalist design language** characterized by:
 
 ---
 
-## 🌐 Live Demo
+## Live Demo
 
-**👉 [100xdevslanding.vercel.app](https://100xdevslanding.vercel.app/)**
+**[100xdevslanding.vercel.app](https://100xdevslanding.vercel.app/)**
 
 ---
 
 <div align="center">
 
-### Built with ❤️ by [Quantapar](https://github.com/Quantapar)
+### Built by [Quantapar](https://github.com/Quantapar)
 
-*If you found this project useful or interesting, consider giving it a ⭐*
+*If you found this project useful or interesting, consider giving it a star!*
 
 </div>
