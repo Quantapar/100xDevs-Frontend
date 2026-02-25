@@ -171,6 +171,6 @@ This project follows a **neo-brutalist design language** characterized by:
 
 ### Built by [Quantapar](https://github.com/Quantapar)
 
-*If you found this project useful or interesting, consider giving it a star!*
+If you found this project useful or interesting, consider giving it a star!
 
 </div>
